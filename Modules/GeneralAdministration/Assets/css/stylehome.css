@@ -1,0 +1,25 @@
+
+
+#index-container {
+	z-index:9999;
+	background: rgba(0, 0, 0, 0.2);
+    //background: red;
+    text-align: center;
+    color: #985f0d;
+    position:absolute;
+	right:45px;
+	top:150px;
+	width:420px;
+}
+
+#index-container input[type="submit"]{
+	width: 400px;
+}
+
+
+#index-header{
+	position: absolute;
+	top: 30px;
+	right: 30px;
+	
+}

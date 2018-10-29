@@ -1,0 +1,16 @@
+<#if licenseFirst??>
+${licenseFirst}
+</#if>
+${licensePrefix}|--------------------------------------------------------------------------
+${licensePrefix}| florenze HIS
+${licensePrefix}|--------------------------------------------------------------------------
+${licensePrefix}|
+${licensePrefix}| This is a proud development of ceynocta(pvt) Ltd.
+${licensePrefix}| 
+${licensePrefix}| Original sources of this product are property of ceynocta(pvt) Ltd
+${licensePrefix}| and please maintain this licence header when modify or further develop
+${licensePrefix}| this product.
+${licensePrefix}
+<#if licenseLast??>
+${licenseLast}
+</#if>

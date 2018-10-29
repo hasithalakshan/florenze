@@ -1,0 +1,15 @@
+{
+    "name": "GeneralAdministration",
+    "alias": "generaladministration",
+    "description": "",
+    "keywords": [],
+    "active": 1,
+    "order": 0,
+    "providers": [
+        "Modules\\GeneralAdministration\\Providers\\GeneralAdministrationServiceProvider"
+    ],
+    "aliases":{},
+    "files": [
+        "start.php"
+    ]
+}

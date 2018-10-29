@@ -1,0 +1,276 @@
+/*
+|--------------------------------------------------------------------------
+| florenze HIS
+|--------------------------------------------------------------------------
+|
+| This is a proud development of ceynocta(pvt) Ltd.
+| 
+| Original sources of this product are property of ceynocta(pvt) Ltd
+| and please maintain this licence header when modify or further develop
+| this product.
+
+*/
+
+.grey{
+    color: #777;
+}
+.light-grey{
+    color: #999;
+}
+.font-12{
+    font-size: 12px;
+}
+.transparent-blue-button{
+    border: 0;
+    background: transparent;
+    color: #39b3d7;
+}
+.transparent-gold-button{
+    border: 0;
+    background: transparent;
+    color: #985f0d;
+}
+.no-padding{
+    padding: 0;
+}
+.no-margin{
+    margin: 0;
+}
+.compact-table tr,.compact-table tr td{
+    padding-top: 0;
+    padding-bottom: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+#filter{
+    background: rgba( 0, 0, 255, 0.1);
+    width: 100%;
+    height: 100%;
+    position: fixed;
+}
+
+#logo {
+    background: url(../images/florenze-logo.png);
+    height: 50px;
+    width: 200px;
+    position: absolute;
+    z-index: 10000;
+    top: 20px;
+    left: 30px;
+}
+
+
+#welcome-carousel{
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+}
+
+#welcome-carousel, .carousel-inner, .item{
+    height: 100%;
+}
+
+#bg1{
+    background: url(../images/bg1.jpg);
+    min-height: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    z-index: -1;
+    //filter: contrast(85%);
+}
+#bg2{
+    background: url(../images/bg2.jpg);
+    min-height: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    z-index: -1;
+    //filter: contrast(85%);
+}
+
+#welcome-carousel{
+}
+.carousel.fade {
+    opacity: 1;
+}
+.carousel.fade .item {
+    transition: opacity ease-out .7s;
+    left: 0;
+    opacity: 0; /* hide all slides */
+    top: 0;
+    position: absolute;
+    min-width: 100%;
+    min-height: 100%;
+    display: block;
+}
+.carousel.fade .item:first-child {
+    top: auto;
+    opacity: 1; /* show first slide */
+    position: relative;
+}
+.carousel.fade .item.active {
+    opacity: 1;
+}
+
+
+
+
+
+
+.florenze-panel{
+    //background: rgba(0, 0, 0, 0.2);
+    background: rgba(256, 256, 256, 0.7);
+    text-align: center;
+    color: #985f0d;
+    border:1px solid #c0a16b;
+    -webkit-box-shadow: 0 2px 1px rgba(0, 0, 0, .2), 0 3px 1px #fff;
+    box-shadow: 0 16px 38px -12px rgba(0, 0, 0, 0.2), 0 16px 38px -12px rgba(0, 0, 0, 0.2), 0 16px 38px -12px rgba(0, 0, 0, 0.2) !important;
+//	box-shadow: 0 2px 1px rgba(0, 0, 0, .2), 0 3px 1px #fff;
+  //box-shadow: 0 16px 38px -12px rgba(0, 0, 0, 0.2), 0 16px 38px -12px rgba(0, 0, 0, 0.2), 0 16px 38px -12px rgba(0, 0, 0, 0.2) !important;
+}
+
+
+.florenze-form{
+    z-index: 5000;
+    padding: 10px;
+    padding-top: 0;
+    //background: rgba(0, 0, 0, 0.1);
+    text-align: center;
+    opacity: 0.9;
+    //border: solid #82DD55;
+    //border: solid #AAE7DF;
+    height: 100%;
+    border-radius: 5px;
+}
+.florenze-form:hover{
+    opacity: 1;
+}
+.florenze-form input[type="reset"]{
+	//color:#80c65e;
+        color: #9acfea;
+	font-size:13px;
+	text-transform: uppercase;
+	font-weight:700;
+	background:none;
+	border:none;
+	outline:none;
+	margin: 0;
+    padding: 0;
+    font-family: 'Raleway', sans-serif;
+    cursor:pointer;
+}
+.florenze-form span{
+	margin:15px 20px;
+    display:block;   
+ }
+.florenze-form input[type="text"],.florenze-form input[type="password"],.florenze-form input[type="date"],.florenze-form input[type="time"],.florenze-form input[type="tel"],.florenze-form input[type="email"],.florenze-form select{
+	padding:8px;
+        margin-bottom: 5px;
+    color:#985f0d;
+    font-weight: 600;
+    font-size:0.85em;
+    background:#FFF;   
+    outline:none;
+    //border:1px solid #c8e3e0;
+    border:1px solid;
+    border-color: #c0a16b;
+    margin:0px auto;
+    width:100%;  
+    -webkit-apperance:none;
+    font-family: 'Raleway', sans-serif;
+     transition: border-color 0.2s;
+	-o-transition: border-color 0.2s;
+	-ms-transition: border-color 0.2s;
+	-moz-transition: border-color 0.2s;
+	-webkit-transition: border-color 0.2s;
+}
+@media (min-height: 767px) {
+    .florenze-form input[type="text"],.florenze-form input[type="password"],.florenze-form input[type="date"],.florenze-form input[type="time"],.florenze-form input[type="tel"],.florenze-form input[type="email"],.florenze-form select{
+        padding: 10px;
+    }
+}
+option[value='-1']{
+    display: none;
+}
+
+.florenze-form input:hover,.florenze-form input:focus{
+	border-color:#c50;
+}
+.florenze-form input[type="radio"] + label{
+    color:#985f0d;
+    font-weight: 600;
+    font-size:0.85em;
+}
+.no-edit.florenze-form input[type="text"],.no-edit.florenze-form input[type="password"],.no-edit.florenze-form input[type="date"],.no-edit.florenze-form input[type="time"],.no-edit.florenze-form input[type="tel"],.no-edit.florenze-form input[type="email"],.no-edit.florenze-form select{
+    border: 0
+}
+.no-edit.florenze-form input[type="radio"]{
+    display: none;
+}
+.no-edit input[type="radio"]+label{
+    display: none;
+}
+
+
+.florenze-form input[type="button"],.florenze-form input[type="submit"]{
+	//padding:15px 0;
+	height: 35px;
+        display:block;
+	width:100%;
+	color:#FFF;
+	font-size:15px;
+	font-weight:600;
+	cursor:pointer;
+	border:none;
+	outline:none;
+    //background:#97e272;    
+    background-color: #39b3d7;
+	-webkit-transition: all 0.3s ease-in-out;
+	-moz-transition: all 0.3s ease-in-out;
+	-o-transition: all 0.3s ease-in-out;
+	transition: all 0.3s ease-in-out;
+	-webkit-apperance:none;
+	font-family: 'Raleway', sans-serif;
+        opacity: 0.8;
+}
+.florenze-form input[type="button"]:hover, .florenze-form input[type="submit"]:hover{
+        //background:#82DD55;
+        opacity: 1;
+}
+.florenze-form p{
+	margin-top:20px;
+	color:#999;
+	font-size:13px;
+	text-transform:uppercase;
+	padding-bottom:20px;
+}
+.florenze-form p a{
+	font-size:1em;
+	font-weight:600;
+	//color:#97e272;
+        color: #9acfea;
+	-webkit-transition: all 0.3s ease-in-out;
+	-moz-transition: all 0.3s ease-in-out;
+	-o-transition: all 0.3s ease-in-out;
+	transition: all 0.3s ease-in-out;
+}
+.florenze-form p a:hover{
+	//color: #82DD55;
+	color: #3391E7;
+        text-decoration:underline;
+}
+tr,td{
+    padding: 5px;
+    padding-top: 1%;
+    padding-bottom: 3%;
+}

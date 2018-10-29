@@ -1,0 +1,15 @@
+{
+    "name": "MedicalRecord",
+    "alias": "medicalrecord",
+    "description": "",
+    "keywords": [],
+    "active": 1,
+    "order": 0,
+    "providers": [
+        "Modules\\MedicalRecord\\Providers\\MedicalRecordServiceProvider"
+    ],
+    "aliases":{},
+    "files": [
+        "start.php"
+    ]
+}

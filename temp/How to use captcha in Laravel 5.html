@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<!-- saved from url=(0052)http://tutsnare.com/how-to-use-captcha-in-laravel-5/ -->
+<html lang="en-US" prefix="og: http://ogp.me/ns#" class="no-js"><!--<![endif]--><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="viewport" content="width=device-width">
+<link rel="profile" href="http://gmpg.org/xfn/11">
+<link rel="pingback" href="http://tutsnare.com/xmlrpc.php">
+<!--[if lt IE 9]>
+<script src="http://tutsnare.com/wp-content/themes/rubbersoul/js/html5.js" type="text/javascript"></script>
+<![endif]-->
+<title>How to use captcha in Laravel 5</title>
+
+<!-- This site is optimized with the Yoast SEO plugin v2.3.5 - https://yoast.com/wordpress/plugins/seo/ -->
+<meta name="description" content="How to use captcha in Laravel 5 with google recaptcha and include an example of contact form with anhskohbo-no-captcha package">
+<meta name="keywords" content="how to use captcha in Laravel 5, how to use captcha in Laravel, captcha in laravel 5, laravel captcha package, laravel 5 captcha, laravel captcha, laravel recaptcha, laravel 5 recaptcha, use captcha in Laravel, use captcha in Laravel 5, captcha, laravel, laravel 5">
+<link rel="canonical" href="http://tutsnare.com/how-to-use-captcha-in-laravel-5/">
+<link rel="publisher" href="https://plus.google.com/u/0/101374872587313905748">
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="article">
+<meta property="og:title" content="How to use captcha in Laravel 5">
+<meta property="og:description" content="How to use captcha in Laravel 5 with google recaptcha and include an example of contact form with anhskohbo-no-captcha package">
+<meta property="og:url" content="http://tutsnare.com/how-to-use-captcha-in-laravel-5/">
+<meta property="og:site_name" content="Tutsnare">
+<meta property="article:publisher" content="https://www.facebook.com/pages/Tutsnare/757936347627025">
+<meta property="article:author" content="https://www.facebook.com/profile.php?id=100001758852143">
+<meta property="article:tag" content="captcha">
+<meta property="article:tag" content="captcha in laravel 5">
+<meta property="article:tag" content="How to use captcha in Laravel">
+<meta property="article:tag" content="how to use captcha in Laravel 5">
+<meta property="article:tag" content="laravel">
+<meta property="article:tag" content="laravel 5">
+<meta property="article:tag" content="laravel 5 captcha">
+<meta property="article:tag" content="laravel 5 recaptcha">
+<meta property="article:tag" content="laravel captcha">
+<meta property="article:tag" content="laravel captcha package">
+<meta property="article:tag" content="laravel recaptcha">
+<meta property="article:tag" content="use captcha in Laravel">
+<meta property="article:tag" content="use captcha in Laravel 5">
+<meta property="article:section" content="Laravel">
+<meta property="article:published_time" content="2015-07-23T10:20:50+00:00">
+<meta property="article:modified_time" content="2015-07-23T10:31:43+00:00">
+<meta property="og:updated_time" content="2015-07-23T10:31:43+00:00">
+<meta property="og:image" content="http://tutsnare.com/wp-content/uploads/2015/07/recapcha.gif">
+<meta property="og:image" content="http://tutsnare.com/wp-content/uploads/2015/07/composer-update.png">
+<meta property="og:image" content="http://tutsnare.com/wp-content/uploads/2015/07/laravel-captcha.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:description" content="How to use captcha in Laravel 5 with google recaptcha and include an example of contact form with anhskohbo-no-captcha package">
+<meta name="twitter:title" content="How to use captcha in Laravel 5">
+<meta name="twitter:site" content="@tutsnare">
+<meta name="twitter:domain" content="Tutsnare">
+<meta name="twitter:image" content="http://tutsnare.com/wp-content/uploads/2015/07/recapcha.gif">
+<meta name="twitter:creator" content="@sharmarakesh395">
+<!-- / Yoast SEO plugin. -->
+
+<link rel="alternate" type="application/rss+xml" title="Tutsnare » Feed" href="http://tutsnare.com/feed/">
+<link rel="alternate" type="application/rss+xml" title="Tutsnare » Comments Feed" href="http://tutsnare.com/comments/feed/">
+<link rel="alternate" type="application/rss+xml" title="Tutsnare » How to use captcha in Laravel 5 Comments Feed" href="http://tutsnare.com/how-to-use-captcha-in-laravel-5/feed/">
+<link rel="stylesheet" id="fb_data_style-css" href="./How to use captcha in Laravel 5_files/fbstyle.css" type="text/css" media="all">
+<link rel="stylesheet" id="contact-form-7-css" href="./How to use captcha in Laravel 5_files/styles.css" type="text/css" media="all">
+<link rel="stylesheet" id="sharify-css" href="./How to use captcha in Laravel 5_files/sharify-style.php" type="text/css" media="all">
+<link rel="stylesheet" id="sharify-icon-css" href="./How to use captcha in Laravel 5_files/sharify.css" type="text/css" media="all">
+<link rel="stylesheet" id="rubbersoul-fonts-css" href="./How to use captcha in Laravel 5_files/css" type="text/css" media="all">
+<link rel="stylesheet" id="rubbersoul-style-css" href="./How to use captcha in Laravel 5_files/style.css" type="text/css" media="all">
+<link rel="stylesheet" id="custom-style-css" href="./How to use captcha in Laravel 5_files/custom-style.css" type="text/css" media="all">
+<!--[if lt IE 9]>
+<link rel='stylesheet' id='rubbersoul-ie-css'  href='http://tutsnare.com/wp-content/themes/rubbersoul/css/ie.css?ver=20121010' type='text/css' media='all' />
+<![endif]-->
+<link rel="stylesheet" id="dashicons-css" href="./How to use captcha in Laravel 5_files/dashicons.min.css" type="text/css" media="all">
+<link rel="stylesheet" id="font-awesome-css" href="./How to use captcha in Laravel 5_files/font-awesome.min.css" type="text/css" media="all">
+<link rel="stylesheet" id="prettify-css" href="./How to use captcha in Laravel 5_files/sunburst.css" type="text/css" media="all">
+<!-- This site uses the Google Analytics by MonsterInsights plugin v5.5.4 - Universal enabled - https://www.monsterinsights.com/ -->
+<script id="facebook-jssdk" src="./How to use captcha in Laravel 5_files/sdk.js.download"></script><script async="" src="./How to use captcha in Laravel 5_files/analytics.js.download"></script><script type="text/javascript">
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','//www.google-analytics.com/analytics.js','__gaTracker');
+
+	__gaTracker('create', 'UA-66913177-1', 'auto');
+	__gaTracker('set', 'forceSSL', true);
+	__gaTracker('require', 'displayfeatures');
+	__gaTracker('send','pageview');
+
+</script>
+<!-- / Google Analytics by MonsterInsights -->
+<script type="text/javascript" src="./How to use captcha in Laravel 5_files/jquery.js.download"></script>
+<script type="text/javascript" src="./How to use captcha in Laravel 5_files/jquery-migrate.min.js.download"></script>
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://tutsnare.com/xmlrpc.php?rsd">
+<meta name="generator" content="WordPress 4.1.16">
+<link rel="shortlink" href="http://tutsnare.com/?p=614">
+	<style type="text/css">
+		a {color: #0098D3;}
+	a:hover {color: #0098D3;}
+	.social-icon-wrapper a:hover {color: #0098D3;}
+	.prefix-widget-title {color: #0098D3;}
+	.term-icon {color: #0098D3;}
+	.wrapper-search-top-bar {background-color:#0098D3;}
+	.sub-title a:hover {color:#0098D3;}
+	.entry-content a:visited,.comment-content a:visited {color:#0098D3;}
+	input[type="submit"] {background-color:#0098D3 !important;}
+	.bypostauthor cite span {background-color:#0098D3;}
+	/*.wrapper-cabecera {background-color:#0098D3;}
+	*/.main-navigation {background-color:#0098D3;}
+	.entry-header .entry-title a:hover {color:#0098D3 ;}
+	.archive-header {border-left-color:#0098D3;}
+	.featured-post {border-left-color:#0098D3 !important;}
+	.main-navigation a:hover,
+	.main-navigation a:focus {
+		color: #0098D3;
+	}
+	.widget-area .widget a:hover {
+		color: #0098D3 !important;
+	}
+	footer[role="contentinfo"] a:hover {
+		color: #0098D3;
+	}
+	.entry-meta a:hover {
+	color: #0098D3;
+	}
+	.format-status .entry-header header a:hover {
+		color: #0098D3;
+	}
+	.comments-area article header a:hover {
+		color: #0098D3;
+	}
+	a.comment-reply-link:hover,
+	a.comment-edit-link:hover {
+		color: #0098D3;
+	}
+	.template-front-page .widget-area .widget li a:hover {
+		color: #0098D3;
+	}
+	.currenttext, .paginacion a:hover {background-color:#0098D3;}
+	.aside{border-left-color:#0098D3 !important;}
+	blockquote{border-left-color:#0098D3;}
+	h2.comments-title {border-left-color:#0098D3;}
+	
+		
+			/*.wrapper-cabecera {height:70px; height:5rem;}*/
+		
+			.header-logo {max-width:none;}
+		
+		
+			.header-logo {border-radius:0;}
+		.header-logo img {border-radius:0;}
+		
+		
+		
+			
+		body.custom-font-enabled {font-family: "Open Sans", Arial, Verdana;}
+	
+			@media screen and (min-width: 600px) {
+			#primary {float:left;}
+			#secondary {float:right;}
+			.site-content {
+				border-left: none;
+				padding-left:0;
+				padding-right: 24px;
+				padding-right:1.714285714285714rem;
+			}
+		}
+		
+	@media screen and (max-width: 599px) {
+		.menu-toggle, .menu-toggle:hover {
+			background:#0098D3 !important;
+			color:#ffffff !important;
+			width:100%;
+		}
+	}
+	</style>
+	
+<style type="text/css" id="syntaxhighlighteranchor"></style>
+<script type="text/javascript" async="" src="./How to use captcha in Laravel 5_files/embed.js.download"></script><script async="" type="text/javascript" src="./How to use captcha in Laravel 5_files/count.js.download"></script><script src="http://tutsnare.disqus.com/count-data.js?1=614%20http%3A%2F%2Ftutsnare.com%2F%3Fp%3D614"></script><style type="text/css">.fb_hidden{position:absolute;top:-10000px;z-index:10001}.fb_reposition{overflow:hidden;position:relative}.fb_invisible{display:none}.fb_reset{background:none;border:0;border-spacing:0;color:#000;cursor:auto;direction:ltr;font-family:"lucida grande", tahoma, verdana, arial, sans-serif;font-size:11px;font-style:normal;font-variant:normal;font-weight:normal;letter-spacing:normal;line-height:1;margin:0;overflow:visible;padding:0;text-align:left;text-decoration:none;text-indent:0;text-shadow:none;text-transform:none;visibility:visible;white-space:normal;word-spacing:normal}.fb_reset>div{overflow:hidden}.fb_link img{border:none}@keyframes fb_transform{from{opacity:0;transform:scale(.95)}to{opacity:1;transform:scale(1)}}.fb_animate{animation:fb_transform .3s forwards}
+.fb_dialog{background:rgba(82, 82, 82, .7);position:absolute;top:-10000px;z-index:10001}.fb_reset .fb_dialog_legacy{overflow:visible}.fb_dialog_advanced{padding:10px;-moz-border-radius:8px;-webkit-border-radius:8px;border-radius:8px}.fb_dialog_content{background:#fff;color:#333}.fb_dialog_close_icon{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 0 transparent;_background-image:url(https://static.xx.fbcdn.net/rsrc.php/v3/yL/r/s816eWC-2sl.gif);cursor:pointer;display:block;height:15px;position:absolute;right:18px;top:17px;width:15px}.fb_dialog_mobile .fb_dialog_close_icon{top:5px;left:5px;right:auto}.fb_dialog_padding{background-color:transparent;position:absolute;width:1px;z-index:-1}.fb_dialog_close_icon:hover{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 -15px transparent;_background-image:url(https://static.xx.fbcdn.net/rsrc.php/v3/yL/r/s816eWC-2sl.gif)}.fb_dialog_close_icon:active{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 -30px transparent;_background-image:url(https://static.xx.fbcdn.net/rsrc.php/v3/yL/r/s816eWC-2sl.gif)}.fb_dialog_loader{background-color:#f6f7f9;border:1px solid #606060;font-size:24px;padding:20px}.fb_dialog_top_left,.fb_dialog_top_right,.fb_dialog_bottom_left,.fb_dialog_bottom_right{height:10px;width:10px;overflow:hidden;position:absolute}.fb_dialog_top_left{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/ye/r/8YeTNIlTZjm.png) no-repeat 0 0;left:-10px;top:-10px}.fb_dialog_top_right{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/ye/r/8YeTNIlTZjm.png) no-repeat 0 -10px;right:-10px;top:-10px}.fb_dialog_bottom_left{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/ye/r/8YeTNIlTZjm.png) no-repeat 0 -20px;bottom:-10px;left:-10px}.fb_dialog_bottom_right{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/ye/r/8YeTNIlTZjm.png) no-repeat 0 -30px;right:-10px;bottom:-10px}.fb_dialog_vert_left,.fb_dialog_vert_right,.fb_dialog_horiz_top,.fb_dialog_horiz_bottom{position:absolute;background:#525252;filter:alpha(opacity=70);opacity:.7}.fb_dialog_vert_left,.fb_dialog_vert_right{width:10px;height:100%}.fb_dialog_vert_left{margin-left:-10px}.fb_dialog_vert_right{right:0;margin-right:-10px}.fb_dialog_horiz_top,.fb_dialog_horiz_bottom{width:100%;height:10px}.fb_dialog_horiz_top{margin-top:-10px}.fb_dialog_horiz_bottom{bottom:0;margin-bottom:-10px}.fb_dialog_iframe{line-height:0}.fb_dialog_content .dialog_title{background:#6d84b4;border:1px solid #365899;color:#fff;font-size:14px;font-weight:bold;margin:0}.fb_dialog_content .dialog_title>span{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/yd/r/Cou7n-nqK52.gif) no-repeat 5px 50%;float:left;padding:5px 0 7px 26px}body.fb_hidden{-webkit-transform:none;height:100%;margin:0;overflow:visible;position:absolute;top:-10000px;left:0;width:100%}.fb_dialog.fb_dialog_mobile.loading{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/ya/r/3rhSv5V8j3o.gif) white no-repeat 50% 50%;min-height:100%;min-width:100%;overflow:hidden;position:absolute;top:0;z-index:10001}.fb_dialog.fb_dialog_mobile.loading.centered{width:auto;height:auto;min-height:initial;min-width:initial;background:none}.fb_dialog.fb_dialog_mobile.loading.centered #fb_dialog_loader_spinner{width:100%}.fb_dialog.fb_dialog_mobile.loading.centered .fb_dialog_content{background:none}.loading.centered #fb_dialog_loader_close{color:#fff;display:block;padding-top:20px;clear:both;font-size:18px}#fb-root #fb_dialog_ipad_overlay{background:rgba(0, 0, 0, .45);position:absolute;bottom:0;left:0;right:0;top:0;width:100%;min-height:100%;z-index:10000}#fb-root #fb_dialog_ipad_overlay.hidden{display:none}.fb_dialog.fb_dialog_mobile.loading iframe{visibility:hidden}.fb_dialog_content .dialog_header{-webkit-box-shadow:white 0 1px 1px -1px inset;background:-webkit-gradient(linear, 0% 0%, 0% 100%, from(#738ABA), to(#2C4987));border-bottom:1px solid;border-color:#1d4088;color:#fff;font:14px Helvetica, sans-serif;font-weight:bold;text-overflow:ellipsis;text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0;vertical-align:middle;white-space:nowrap}.fb_dialog_content .dialog_header table{-webkit-font-smoothing:subpixel-antialiased;height:43px;width:100%}.fb_dialog_content .dialog_header td.header_left{font-size:12px;padding-left:5px;vertical-align:middle;width:60px}.fb_dialog_content .dialog_header td.header_right{font-size:12px;padding-right:5px;vertical-align:middle;width:60px}.fb_dialog_content .touchable_button{background:-webkit-gradient(linear, 0% 0%, 0% 100%, from(#4966A6), color-stop(.5, #355492), to(#2A4887));border:1px solid #29487d;-webkit-background-clip:padding-box;-webkit-border-radius:3px;-webkit-box-shadow:rgba(0, 0, 0, .117188) 0 1px 1px inset, rgba(255, 255, 255, .167969) 0 1px 0;display:inline-block;margin-top:3px;max-width:85px;line-height:18px;padding:4px 12px;position:relative}.fb_dialog_content .dialog_header .touchable_button input{border:none;background:none;color:#fff;font:12px Helvetica, sans-serif;font-weight:bold;margin:2px -12px;padding:2px 6px 3px 6px;text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0}.fb_dialog_content .dialog_header .header_center{color:#fff;font-size:16px;font-weight:bold;line-height:18px;text-align:center;vertical-align:middle}.fb_dialog_content .dialog_content{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/y9/r/jKEcVPZFk-2.gif) no-repeat 50% 50%;border:1px solid #555;border-bottom:0;border-top:0;height:150px}.fb_dialog_content .dialog_footer{background:#f6f7f9;border:1px solid #555;border-top-color:#ccc;height:40px}#fb_dialog_loader_close{float:left}.fb_dialog.fb_dialog_mobile .fb_dialog_close_button{text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0}.fb_dialog.fb_dialog_mobile .fb_dialog_close_icon{visibility:hidden}#fb_dialog_loader_spinner{animation:rotateSpinner 1.2s linear infinite;background-color:transparent;background-image:url(https://static.xx.fbcdn.net/rsrc.php/v3/yD/r/t-wz8gw1xG1.png);background-repeat:no-repeat;background-position:50% 50%;height:24px;width:24px}@keyframes rotateSpinner{0%{transform:rotate(0deg)}100%{transform:rotate(360deg)}}
+.fb_iframe_widget{display:inline-block;position:relative}.fb_iframe_widget span{display:inline-block;position:relative;text-align:justify}.fb_iframe_widget iframe{position:absolute}.fb_iframe_widget_fluid_desktop,.fb_iframe_widget_fluid_desktop span,.fb_iframe_widget_fluid_desktop iframe{max-width:100%}.fb_iframe_widget_fluid_desktop iframe{min-width:220px;position:relative}.fb_iframe_widget_lift{z-index:1}.fb_hide_iframes iframe{position:relative;left:-10000px}.fb_iframe_widget_loader{position:relative;display:inline-block}.fb_iframe_widget_fluid{display:inline}.fb_iframe_widget_fluid span{width:100%}.fb_iframe_widget_loader iframe{min-height:32px;z-index:2;zoom:1}.fb_iframe_widget_loader .FB_Loader{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/y9/r/jKEcVPZFk-2.gif) no-repeat;height:32px;width:32px;margin-left:-16px;position:absolute;left:50%;z-index:4}</style><link rel="stylesheet" href="./How to use captcha in Laravel 5_files/loading.88cedde79846569c88b36b63a7cc7414.css"></head>
+
+<body class="single single-post postid-614 single-format-standard custom-font-enabled single-author">
+
+	<a name="inicio_pagina"></a>
+	
+	<header id="masthead" class="site-header" role="banner">
+		<div class="wrapper-cabecera">
+							<div class="header-logo" style="float:left;">
+						<a href="http://tutsnare.com/"><img src="./How to use captcha in Laravel 5_files/logo_1788637_web1.jpg" class="header-image" width="200" height="59" alt="Tutsnare"></a>
+					</div>
+								
+				
+				<div class="gads" style="width: 65%; float: left; margin-left: 20px; padding: 0px;"></div>
+			<div class="blogname-y-menu">
+				<div class="boton-menu-movil"><i class="fa fa-align-justify fa-2x"></i></div>
+				
+				
+				<!-- <div class="toggle-search"><i class="fa fa-search"></i></div> -->
+				
+				<div class="wrapper-site-navigation">
+					<nav id="site-navigation" class="main-navigation primary-navigation" role="navigation">
+						
+						<div class="menu-tutsnare-menu-container"><ul id="menu-tutsnare-menu" class="nav-menu"><li id="menu-item-747" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-747"><a href="http://tutsnare.com/">Home</a></li>
+<li id="menu-item-750" class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor menu-item-has-children menu-item-750"><a href="http://tutsnare.com/category/tutorials/">Tutorials</a>
+<ul class="sub-menu">
+	<li id="menu-item-751" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-751"><a href="http://tutsnare.com/category/tutorials/angularjs/">AngularJS</a></li>
+	<li id="menu-item-752" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-752"><a href="http://tutsnare.com/category/tutorials/codeigniter/">Codeigniter</a></li>
+	<li id="menu-item-753" class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-753"><a href="http://tutsnare.com/category/tutorials/laravel/">Laravel</a></li>
+	<li id="menu-item-754" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-754"><a href="http://tutsnare.com/category/tutorials/php/">PHP</a></li>
+	<li id="menu-item-755" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-755"><a href="http://tutsnare.com/category/tutorials/social/">Social</a></li>
+	<li id="menu-item-756" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-756"><a href="http://tutsnare.com/category/tutorials/yii/">Yii</a></li>
+</ul>
+</li>
+<li id="menu-item-748" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-748"><a href="http://tutsnare.com/about-us/">About Us</a></li>
+<li id="menu-item-749" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-749"><a href="http://tutsnare.com/contact-us/">Contact Us</a></li>
+</ul></div>					</nav><!-- #site-navigation -->
+					<!-- <div class="wrapper-search-top-bar"><div class="search-top-bar"> 	<div>
+		<form method="get" id="searchform-toggle" action="http://tutsnare.com/">
+			<label for="s" class="assistive-text">Search</label>
+			<input type="search" class="txt-search" name="s" id="s" />
+			<input type="submit" name="submit" id="btn-search" value="Search" />
+		</form>
+    </div></div> --></div>
+				</div><!-- .wrapper-site-navigation -->
+				
+			</div><!-- .blogname-y-menu -->
+			
+			<div style="position:relative; clear:both;">
+<div id="menu-movil">
+	<div class="search-form-movil">
+		<form method="get" id="searchform-movil" action="http://tutsnare.com/">
+			<label for="s" class="assistive-text">Search</label>
+			<input type="search" class="txt-search-movil" placeholder="Search..." name="s" id="s">
+			<input type="submit" name="submit" id="btn-search-movil" value="Search">
+		</form>
+    </div><!-- search-form-movil -->
+	<div class="menu-movil-enlaces">
+		<div class="menu-tutsnare-menu-container"><ul id="menu-tutsnare-menu-1" class="nav-menu"><li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-747"><a href="http://tutsnare.com/">Home</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor menu-item-has-children menu-item-750"><a href="http://tutsnare.com/category/tutorials/">Tutorials</a>
+<ul class="sub-menu">
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-751"><a href="http://tutsnare.com/category/tutorials/angularjs/">AngularJS</a></li>
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-752"><a href="http://tutsnare.com/category/tutorials/codeigniter/">Codeigniter</a></li>
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-753"><a href="http://tutsnare.com/category/tutorials/laravel/">Laravel</a></li>
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-754"><a href="http://tutsnare.com/category/tutorials/php/">PHP</a></li>
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-755"><a href="http://tutsnare.com/category/tutorials/social/">Social</a></li>
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-756"><a href="http://tutsnare.com/category/tutorials/yii/">Yii</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-748"><a href="http://tutsnare.com/about-us/">About Us</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-749"><a href="http://tutsnare.com/contact-us/">Contact Us</a></li>
+</ul></div>	</div>
+</div><!-- #menu-movil --></div>	
+			
+		<!-- wrapper-cabecera -->
+	
+	</header><!-- #masthead -->
+	
+	<div id="page" class="hfeed site">
+	
+	<div id="main" class="wrapper">
+	<div id="primary" class="site-content">
+		<div id="content" role="main">
+
+			
+				
+	<article id="post-614" class="post-614 post type-post status-publish format-standard hentry category-laravel tag-captcha tag-captcha-in-laravel-5 tag-how-to-use-captcha-in-laravel tag-how-to-use-captcha-in-laravel-5 tag-laravel tag-laravel-5 tag-laravel-5-captcha tag-laravel-5-recaptcha tag-laravel-captcha tag-laravel-captcha-package tag-laravel-recaptcha tag-use-captcha-in-laravel tag-use-captcha-in-laravel-5">
+		
+				
+		<header class="entry-header">
+						<h1 class="entry-title">How to use captcha in Laravel 5</h1>
+						
+			<!-- Author, date and comments -->
+            <div class="sub-title">
+				<div class="autor-fecha">
+                	<i class="fa fa-user"></i> <span class="vcard author"><span class="fn"><a href="http://tutsnare.com/author/rakesh-sharma/">Rakesh Sharma</a></span></span>&nbsp;&nbsp;
+                 	<i class="fa fa-calendar-o"></i> <span class="entry-date updated">July 23, 2015</span>&nbsp;&nbsp;<i class="fa fa-comment-o"></i> <a href="http://tutsnare.com/how-to-use-captcha-in-laravel-5/#disqus_thread" title="Comment on How to use captcha in Laravel 5" data-disqus-identifier="614 http://tutsnare.com/?p=614">7 Comments</a>&nbsp;&nbsp;<span class="lara-color"><i class="fa fa-folder-open"></i> <a href="http://tutsnare.com/category/tutorials/laravel/" rel="tag">Laravel</a></span>
+               </div>
+                <!--<div class="popup-comments"> </div>-->
+            </div><!-- .sub-title -->
+		</header><!-- .entry-header -->
+		
+		<!-- Subtitle widget area -->
+					<div class="sub-title-widget-area">
+							</div><!-- .sub-title-widget-area -->	
+		
+				
+			<div class="entry-content">
+				<div class="sharify-container"><ul><li class="sharify-btn-twitter">
+								<a href="https://twitter.com/intent/tweet?text=How+to+use+captcha+in+Laravel+5:%20http://tutsnare.com/how-to-use-captcha-in-laravel-5/%20-%20via:@tutsnare" title="Tweet on Twitter" onclick="window.open(this.href, &#39;mywin&#39;,&#39;left=50,top=50,width=600,height=350,toolbar=0&#39;); return false; __gaTracker(&#39;send&#39;, &#39;event&#39;, &#39;outbound-article&#39;, &#39;https://twitter.com/intent/tweet?text=How+to+use+captcha+in+Laravel+5: http://tutsnare.com/how-to-use-captcha-in-laravel-5/ - via:@tutsnare&#39;, &#39;\n									\n									Tweet\n								&#39;);">
+									<span class="sharify-icon"><i class="sharify sharify-twitter"></i></span>
+									<span class="sharify-title">Tweet</span>
+								</a>
+							</li><li class="sharify-btn-facebook">
+								<a href="http://www.facebook.com/sharer.php?u=http%3A%2F%2Ftutsnare.com%2Fhow-to-use-captcha-in-laravel-5%2F" title="Share on Facebook" onclick="window.open(this.href, &#39;mywin&#39;,&#39;left=50,top=50,width=600,height=350,toolbar=0&#39;); return false; __gaTracker(&#39;send&#39;, &#39;event&#39;, &#39;outbound-article&#39;, &#39;http://www.facebook.com/sharer.php?u=http%3A%2F%2Ftutsnare.com%2Fhow-to-use-captcha-in-laravel-5%2F&#39;, &#39;\n									\n									Share\n									0\n								&#39;);">
+									<span class="sharify-icon"><i class="sharify sharify-facebook"></i></span>
+									<span class="sharify-title">Share</span>
+									<span class="sharify-count">7</span>
+								</a>
+							</li><li class="sharify-btn-gplus">
+								<a href="http://plus.google.com/share?url=http://tutsnare.com/how-to-use-captcha-in-laravel-5/" title="Share on Google+" onclick="window.open(this.href, &#39;mywin&#39;,&#39;left=50,top=50,width=600,height=350,toolbar=0&#39;); return false; __gaTracker(&#39;send&#39;, &#39;event&#39;, &#39;outbound-article&#39;, &#39;http://plus.google.com/share?url=http://tutsnare.com/how-to-use-captcha-in-laravel-5/&#39;, &#39;\n									\n									+1\n								&#39;);">
+									<span class="sharify-icon"><i class="sharify sharify-gplus"></i></span>
+									<span class="sharify-title">+1</span>
+								</a>
+							</li><li class="sharify-btn-linkedin">
+								<a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=http://tutsnare.com/how-to-use-captcha-in-laravel-5/&amp;title=How%20to%20use%20captcha%20in%20Laravel%205" onclick="__gaTracker(&#39;send&#39;, &#39;event&#39;, &#39;outbound-article&#39;, &#39;https://www.linkedin.com/shareArticle?mini=true&amp;url=http://tutsnare.com/how-to-use-captcha-in-laravel-5/&amp;title=How to use captcha in Laravel 5&#39;, &#39;\n									\n									LinkedIn\n									0\n								&#39;);" title="Share on Linkedin">
+									<span class="sharify-icon"><i class="sharify sharify-linkedin"></i></span>
+									<span class="sharify-title">LinkedIn</span>
+									<span class="sharify-count">1</span>
+								</a>
+							</li></ul></div><h2 class="post-strong">How to use captcha in Laravel 5 – Google reCAPTCHA</h2>
+<p>Sometimes we should use captcha on our form to prevent spams, bots etc. There is also more captcha open source library, mostly used library is<br>
+Google reCAPTCHA. Which is freely and easy to use for both client and server side. So we are using google recaptcha to embed on form of laravel application. For use captcha in laravel 5 there is also inbuilt libraries on github to use google recapcha in laravel 5 application. I found a good package for captcha in laravel on github with named <a href="https://github.com/anhskohbo/no-captcha" onclick="__gaTracker(&#39;send&#39;, &#39;event&#39;, &#39;outbound-article&#39;, &#39;https://github.com/anhskohbo/no-captcha&#39;, &#39;anhskohbo/no-captcha&#39;);" target="_blank">anhskohbo/no-captcha</a>. In this artcle how to use captcha in Laravel 5, i am working with this package to include captcha on form. Let’s see how to use captcha in laravel 5 with package anhskohbo-no-captcha(Google reCAPTCHA).</p>
+<p><a href="./How to use captcha in Laravel 5_files/recapcha.gif"><img src="./How to use captcha in Laravel 5_files/recapcha.gif" alt="google-recapcha" width="616" height="164" class="alignnone size-full wp-image-618"></a></p>
+<p><strong>What is captcha :-</strong> A program that use for human verification or program which protect websites against bots, spam etc. Generally Captcha contain a image for human challenge on forms for human read and enter captcha image text. </p>
+<h2 class="post-strong">Steps to add captcha in laravel 5</h2>
+<p><strong>1. include package :</strong></p>
+<p><strong>a.</strong> Add the below code to the <code>require</code> section of <code>composer.json</code>.</p>
+<pre class="prettyprint prettyprinted"><span class="str">"require"</span><span class="pun">:</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+</span><span class="com">// More already here.</span><span class="pln">
+    </span><span class="str">"anhskohbo/no-captcha"</span><span class="pun">:</span><span class="pln"> </span><span class="str">"2.*"</span><span class="pun">,</span><span class="pln">
+</span><span class="pun">},</span></pre>
+<p><strong>b.</strong> Now open your terminal/cmd and and run below command to get package from github.</p>
+<pre class="prettyprint prettyprinted"><span class="pln">composer update</span></pre>
+<p><a href="./How to use captcha in Laravel 5_files/composer-update.png"><img src="./How to use captcha in Laravel 5_files/composer-update.png" alt="composer-update" width="697" height="122" class="alignnone size-full wp-image-619"></a></p>
+<p><strong>c.</strong> After run <code>composer update</code> add ServiceProvider to the providers array in <code>config/app.php</code>.</p>
+<pre class="prettyprint prettyprinted"><span class="str">'providers'</span><span class="pln"> </span><span class="pun">=&gt;</span><span class="pln"> </span><span class="pun">[</span><span class="pln">
+  </span><span class="str">'Anhskohbo\NoCaptcha\NoCaptchaServiceProvider'</span><span class="pun">,</span><span class="pln">
+</span><span class="pun">],</span><span class="pln">
+
+</span><span class="com">// Or upper version.</span><span class="pln">
+
+</span><span class="str">'providers'</span><span class="pln"> </span><span class="pun">=&gt;</span><span class="pln"> </span><span class="pun">[</span><span class="pln">
+  </span><span class="typ">Anhskohbo</span><span class="pln">\NoCaptcha\NoCaptchaServiceProvider</span><span class="pun">::</span><span class="kwd">class</span><span class="pun">,</span><span class="pln">
+</span><span class="pun">],</span></pre>
+<p><strong>2. Get google recaptcha site key and secret-key :</strong> After config we need to get recaptcha key and secret for our site. For this Got to <a href="https://www.google.com/recaptcha/admin" onclick="__gaTracker(&#39;send&#39;, &#39;event&#39;, &#39;outbound-article&#39;, &#39;https://www.google.com/recaptcha/admin&#39;, &#39;Recaptcha Admin&#39;);" target="_blank">Recaptcha Admin</a>. Log in if not already, Then click on “Get recaptcha” Button.<br>
+Add your domain to “Domains” of “Key settings” section/form and click on save. This will generate a “site key” and “secret key”.</p>
+<p><strong>3. Add Keys to .env :</strong> Now add below code to your <code>.env</code> file. and paste your keys here.</p>
+<pre class="prettyprint prettyprinted"><span class="pln">NOCAPTCHA_SECRET</span><span class="pun">=[</span><span class="pln">secret</span><span class="pun">-</span><span class="pln">key</span><span class="pun">]</span><span class="pln">
+NOCAPTCHA_SITEKEY</span><span class="pun">=[</span><span class="pln">site</span><span class="pun">-</span><span class="pln">key</span><span class="pun">]</span></pre>
+<p>So Now our recaptcha config for laravel 5 application has been done. Let’s see how to integrate captcha on form.</p>
+<h2 class="post-strong">How to use captcha and validate in laravel 5</h2>
+<p>To display captcha on view add below code to your <code>name.blade.php</code></p>
+<pre class="prettyprint prettyprinted"><span class="pun">{!!</span><span class="pln"> app</span><span class="pun">(</span><span class="str">'captcha'</span><span class="pun">)-&gt;</span><span class="pln">display</span><span class="pun">();</span><span class="pln"> </span><span class="pun">!!}</span></pre>
+<p><strong>Example of a contact form recaptcha in laravel 5:- </strong></p>
+<p><a href="./How to use captcha in Laravel 5_files/laravel-captcha.png"><img src="./How to use captcha in Laravel 5_files/laravel-captcha.png" alt="How to use captcha in laravel 5" width="917" height="457" class="alignnone size-full wp-image-620"></a></p>
+<p><strong>View :</strong> Create a view file under <code>resources/views/contact.blade.php</code>. And add below code </p>
+<pre class="prettyprint prettyprinted"><span class="tag">&lt;div</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"container-fluid"</span><span class="tag">&gt;</span><span class="pln">
+	</span><span class="tag">&lt;div</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"row"</span><span class="tag">&gt;</span><span class="pln">
+		</span><span class="tag">&lt;div</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"col-md-8 col-md-offset-2"</span><span class="tag">&gt;</span><span class="pln">
+			</span><span class="tag">&lt;div</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"panel panel-default"</span><span class="tag">&gt;</span><span class="pln">
+				</span><span class="tag">&lt;div</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"panel-heading"</span><span class="tag">&gt;</span><span class="pln">Contact us</span><span class="tag">&lt;/div&gt;</span><span class="pln">
+				</span><span class="tag">&lt;div</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"panel-body"</span><span class="tag">&gt;</span><span class="pln">
+					@if (count($errors) &gt; 0)
+					</span><span class="tag">&lt;div</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"alert alert-danger"</span><span class="tag">&gt;</span><span class="pln">
+						</span><span class="tag">&lt;strong&gt;</span><span class="pln">Whoops!</span><span class="tag">&lt;/strong&gt;</span><span class="pln"> There were some problems with your input.</span><span class="tag">&lt;br</span><span class="pln"> </span><span class="tag">/&gt;&lt;br</span><span class="pln"> </span><span class="tag">/&gt;</span><span class="pln">
+						</span><span class="tag">&lt;ul&gt;</span><span class="pln">
+							@foreach ($errors-&gt;all() as $error)
+							</span><span class="tag">&lt;li&gt;</span><span class="pln">{{ $error }}</span><span class="tag">&lt;/li&gt;</span><span class="pln">
+							@endforeach
+						</span><span class="tag">&lt;/ul&gt;</span><span class="pln">
+					</span><span class="tag">&lt;/div&gt;</span><span class="pln">
+					@endif
+
+					{!! Form::open(array('url'=&gt;'contact','method'=&gt;'POST', 'id'=&gt;'myform')) !!}
+					
+					</span><span class="tag">&lt;div</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"form-group"</span><span class="tag">&gt;</span><span class="pln">
+						</span><span class="tag">&lt;label</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"col-md-4 control-label"</span><span class="tag">&gt;</span><span class="pln">Name</span><span class="tag">&lt;/label&gt;</span><span class="pln">
+						</span><span class="tag">&lt;div</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"col-md-6"</span><span class="tag">&gt;</span><span class="pln">
+							{!! Form::text('name','',array('id'=&gt;'','class'=&gt;'form-control span6','placeholder' =&gt; 'Your Full Name')) !!}
+						</span><span class="tag">&lt;/div&gt;</span><span class="pln">
+					</span><span class="tag">&lt;/div&gt;</span><span class="pln">
+
+					</span><span class="tag">&lt;div</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"form-group"</span><span class="tag">&gt;</span><span class="pln">
+						</span><span class="tag">&lt;label</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"col-md-4 control-label"</span><span class="tag">&gt;</span><span class="pln">E-Mail Address</span><span class="tag">&lt;/label&gt;</span><span class="pln">
+						</span><span class="tag">&lt;div</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"col-md-6"</span><span class="tag">&gt;</span><span class="pln">
+							{!! Form::text('email','',array('id'=&gt;'','class'=&gt;'form-control span6','placeholder' =&gt; 'Your Email')) !!}
+						</span><span class="tag">&lt;/div&gt;</span><span class="pln">
+					</span><span class="tag">&lt;/div&gt;</span><span class="pln">
+
+					</span><span class="tag">&lt;div</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"form-group"</span><span class="tag">&gt;</span><span class="pln">
+						</span><span class="tag">&lt;label</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"col-md-4 control-label"</span><span class="tag">&gt;</span><span class="pln">Subject</span><span class="tag">&lt;/label&gt;</span><span class="pln">
+						</span><span class="tag">&lt;div</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"col-md-6"</span><span class="tag">&gt;</span><span class="pln">
+							{!! Form::text('subject','',array('id'=&gt;'','class'=&gt;'form-control span6','placeholder' =&gt; 'Your Subject')) !!}
+						</span><span class="tag">&lt;/div&gt;</span><span class="pln">
+					</span><span class="tag">&lt;/div&gt;</span><span class="pln">
+
+					</span><span class="tag">&lt;div</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"form-group"</span><span class="tag">&gt;</span><span class="pln">
+						</span><span class="tag">&lt;label</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"col-md-4 control-label"</span><span class="tag">&gt;</span><span class="pln">Message</span><span class="tag">&lt;/label&gt;</span><span class="pln">
+						</span><span class="tag">&lt;div</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"col-md-6"</span><span class="tag">&gt;</span><span class="pln">
+							{!! Form::textarea('msg','',array('id'=&gt;'','class'=&gt;'form-control span6','placeholder' =&gt; 'Your Full Name')) !!}
+						</span><span class="tag">&lt;/div&gt;</span><span class="pln">
+					</span><span class="tag">&lt;/div&gt;</span><span class="pln">
+
+					</span><span class="tag">&lt;div</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"form-group"</span><span class="tag">&gt;</span><span class="pln">
+						</span><span class="tag">&lt;label</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"col-md-4 control-label"</span><span class="tag">&gt;</span><span class="pln">Captcha</span><span class="tag">&lt;/label&gt;</span><span class="pln">
+						</span><span class="tag">&lt;div</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"col-md-6"</span><span class="tag">&gt;</span><span class="pln">
+							{!! app('captcha')-&gt;display(); !!}
+						</span><span class="tag">&lt;/div&gt;</span><span class="pln">
+					</span><span class="tag">&lt;/div&gt;</span><span class="pln">
+
+					</span><span class="tag">&lt;div</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"form-group"</span><span class="tag">&gt;</span><span class="pln">
+						</span><span class="tag">&lt;div</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"col-md-6 col-md-offset-4"</span><span class="tag">&gt;</span><span class="pln">
+							</span><span class="tag">&lt;button</span><span class="pln"> </span><span class="atn">type</span><span class="pun">=</span><span class="atv">"submit"</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"btn btn-primary"</span><span class="tag">&gt;</span><span class="pln">
+								Submit
+							</span><span class="tag">&lt;/button&gt;</span><span class="pln">
+						</span><span class="tag">&lt;/div&gt;</span><span class="pln">
+					</span><span class="tag">&lt;/div&gt;</span><span class="pln">
+				</span><span class="tag">&lt;/form&gt;</span><span class="pln">
+			</span><span class="tag">&lt;/div&gt;</span><span class="pln">
+		</span><span class="tag">&lt;/div&gt;</span><span class="pln">
+	</span><span class="tag">&lt;/div&gt;</span><span class="pln">
+</span><span class="tag">&lt;/div&gt;</span><span class="pln">
+</span><span class="tag">&lt;/div&gt;</span></pre>
+<p><strong>Controller :-</strong> Now create a controller file under “Http/controllers/EnquiryController.php”. And add below code.</p>
+<pre class="prettyprint prettyprinted"><span class="pun">&lt;?</span><span class="pln">php </span><span class="kwd">namespace</span><span class="pln"> </span><span class="typ">App</span><span class="pln">\Http\Controllers</span><span class="pun">;</span><span class="pln">
+</span><span class="kwd">use</span><span class="pln"> </span><span class="typ">Input</span><span class="pun">;</span><span class="pln">
+</span><span class="kwd">use</span><span class="pln"> </span><span class="typ">Validator</span><span class="pun">;</span><span class="pln">
+</span><span class="kwd">use</span><span class="pln"> </span><span class="typ">Redirect</span><span class="pun">;</span><span class="pln">
+</span><span class="kwd">use</span><span class="pln"> </span><span class="typ">Session</span><span class="pun">;</span><span class="pln">
+</span><span class="kwd">class</span><span class="pln"> </span><span class="typ">EnquiryController</span><span class="pln"> </span><span class="kwd">extends</span><span class="pln"> </span><span class="typ">Controller</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+	</span><span class="kwd">public</span><span class="pln"> </span><span class="kwd">function</span><span class="pln"> index</span><span class="pun">()</span><span class="pln">
+	</span><span class="pun">{</span><span class="pln">
+	    $data </span><span class="pun">=</span><span class="pln"> </span><span class="typ">Input</span><span class="pun">::</span><span class="pln">all</span><span class="pun">();</span><span class="pln">
+	    $rules </span><span class="pun">=</span><span class="pln"> array</span><span class="pun">(</span><span class="pln">
+		  	</span><span class="str">'name'</span><span class="pln"> </span><span class="pun">=&gt;</span><span class="pln"> </span><span class="str">'required'</span><span class="pun">,</span><span class="pln">
+		  	</span><span class="str">'email'</span><span class="pln"> </span><span class="pun">=&gt;</span><span class="pln"> </span><span class="str">'required|email'</span><span class="pun">,</span><span class="pln">
+			</span><span class="str">'subject'</span><span class="pln"> </span><span class="pun">=&gt;</span><span class="pln"> </span><span class="str">'required'</span><span class="pun">,</span><span class="pln">
+			</span><span class="str">'g-recaptcha-response'</span><span class="pln"> </span><span class="pun">=&gt;</span><span class="pln"> </span><span class="str">'required|captcha'</span><span class="pun">,</span><span class="pln">
+			</span><span class="str">'msg'</span><span class="pln"> </span><span class="pun">=&gt;</span><span class="pln"> </span><span class="str">'required'</span><span class="pun">,</span><span class="pln">
+		</span><span class="pun">);</span><span class="pln">
+		$validator </span><span class="pun">=</span><span class="pln"> </span><span class="typ">Validator</span><span class="pun">::</span><span class="pln">make</span><span class="pun">(</span><span class="pln">$data</span><span class="pun">,</span><span class="pln"> $rules</span><span class="pun">);</span><span class="pln">
+		</span><span class="kwd">if</span><span class="pln"> </span><span class="pun">(</span><span class="pln">$validator</span><span class="pun">-&gt;</span><span class="pln">fails</span><span class="pun">()){</span><span class="pln">
+		    </span><span class="kwd">return</span><span class="pln"> </span><span class="typ">Redirect</span><span class="pun">::</span><span class="pln">to</span><span class="pun">(</span><span class="str">'/contact'</span><span class="pun">)-&gt;</span><span class="pln">withInput</span><span class="pun">()-&gt;</span><span class="pln">withErrors</span><span class="pun">(</span><span class="pln">$validator</span><span class="pun">);</span><span class="pln">
+		</span><span class="pun">}</span><span class="pln">
+		</span><span class="kwd">else</span><span class="pun">{</span><span class="pln">
+		    </span><span class="com">// Do your stuff.</span><span class="pln">
+		</span><span class="pun">}</span><span class="pln">
+	</span><span class="pun">}</span><span class="pln">
+</span><span class="pun">}</span></pre>
+<p><strong>Routes :</strong> Now add your contact routes in “Http/routes.php”.</p>
+<pre class="prettyprint prettyprinted"><span class="typ">Route</span><span class="pun">::</span><span class="kwd">get</span><span class="pun">(</span><span class="str">'contact'</span><span class="pun">,</span><span class="pln"> </span><span class="kwd">function</span><span class="pun">()</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+  </span><span class="kwd">return</span><span class="pln"> </span><span class="typ">View</span><span class="pun">::</span><span class="pln">make</span><span class="pun">(</span><span class="str">'contact'</span><span class="pun">);</span><span class="pln">
+</span><span class="pun">});</span><span class="pln">
+</span><span class="typ">Route</span><span class="pun">::</span><span class="pln">post</span><span class="pun">(</span><span class="str">'contact'</span><span class="pun">,</span><span class="pln"> </span><span class="str">'EnquiryController@index'</span><span class="pun">);</span></pre>
+<p>Now run your contact form url “http://localhost/laravel/contact”. You will see your google recapcha working here. Now check your captcha validation. So using laravel 5 captcha package it’s easy to use captcha in laravel 5. For more about <strong>how to use captcha in Laravel 5</strong> using  <a href="https://github.com/anhskohbo/no-captcha" onclick="__gaTracker(&#39;send&#39;, &#39;event&#39;, &#39;outbound-article&#39;, &#39;https://github.com/anhskohbo/no-captcha&#39;, &#39;anhskohbo/no-captcha&#39;);" target="_blank">anhskohbo/no-captcha</a>.</p>
+							</div><!-- .entry-content -->
+			
+		
+		
+	</article><!-- #post -->
+
+	<footer class="entry-meta">
+			<!-- Post end widget area -->
+							<div class="post-end-widget-area">
+									</div>
+						
+									
+						
+							<div class="author-info">
+					<div class="author-avatar">
+						<img alt="" src="./How to use captcha in Laravel 5_files/a879d103e7fa5a06b4b8a07f336a111c" class="avatar avatar-90 photo" height="90" width="90">					</div><!-- .author-avatar -->
+					<div class="author-description">
+						<h2>About Rakesh Sharma</h2>
+						<p>Sharing things which i have done and which i found interesting.</p>
+						<p><a href="https://www.facebook.com/profile.php?id=100001758852143" rel="author" target="_blank">
+								<img src="./How to use captcha in Laravel 5_files/facebook.jpg" alt="rakesh-facebook" height="40" width="40" title="Follow me on Facebook">
+							</a>
+                            <a href="https://plus.google.com/114459748493140684907/posts" rel="author" target="_blank">
+								<img src="./How to use captcha in Laravel 5_files/google.jpg" alt="rakesh-google" height="40" width="40" title="Follow me on Google">
+							</a>
+							<a href="https://twitter.com/sharmarakesh395" rel="author" target="_blank">
+								<img src="./How to use captcha in Laravel 5_files/twitter.jpg" alt="rakesh-twitter" height="40" width="40" title="Follow me on Twitter">
+							</a>
+							</p>
+						<div class="author-link">
+							<a href="http://tutsnare.com/author/rakesh-sharma/" rel="author">
+								View all posts by Rakesh Sharma <span class="meta-nav">→</span>							</a>
+						</div><!-- .author-link	-->
+					</div><!-- .author-description -->
+				</div><!-- .author-info -->
+					</footer><!-- .entry-meta -->
+
+				<nav class="nav-single">
+					<h3 class="assistive-text">Post navigation</h3>
+					<div class="wrapper-navigation-below">
+					<span class="nav-previous"><a href="http://tutsnare.com/connect-multiple-databases-in-laravel/" rel="prev"><span class="meta-nav">←</span> Connect multiple databases in laravel</a></span>
+					<span class="nav-next"><a href="http://tutsnare.com/how-to-include-css-and-js-in-laravel-5/" rel="next">How to include css and js in Laravel 5 <span class="meta-nav">→</span></a></span>
+					</div><!-- .wrapper-navigation-below -->
+				</nav><!-- .nav-single -->
+
+				
+<div id="disqus_thread"><iframe id="dsq-app1" name="dsq-app1" allowtransparency="true" frameborder="0" scrolling="no" tabindex="0" title="Disqus" width="100%" src="./How to use captcha in Laravel 5_files/saved_resource.html" style="width: 1px !important; min-width: 100% !important; border: none !important; overflow: hidden !important; height: 0px !important;"></iframe><div dir="ltr" style="overflow: hidden;"><div class="disqus-loader-bubble" style="height: 52px; width: 54px; margin: 0px auto; overflow: hidden; position: relative; box-sizing: border-box;"><div class="disqus-loader-spinner" style="box-sizing: border-box; width: 26px; height: 26px; position: absolute; top: 13px; left: 15px; border-width: 3px; border-style: solid; border-color: rgba(51, 54, 58, 0.4) transparent; border-radius: 13px; transform-origin: 50% 50% 0px;"></div></div><p align="center">Disqus seems to be taking longer than usual. <a href="http://tutsnare.com/how-to-use-captcha-in-laravel-5/#" onclick="DISQUS.reset({reload: true}); return false;">Reload</a>?</p></div></div>
+
+
+			
+		</div><!-- #content -->
+	</div><!-- #primary -->
+
+
+			<div id="secondary" class="widget-area" role="complementary">
+			<aside id="text-2" class="widget widget_text"><h3 class="widget-title">Stay in touch</h3>			<div class="textwidget"><div id="fb-root" class=" fb_reset"><div style="position: absolute; top: -10000px; height: 0px; width: 0px;"><div><iframe name="fb_xdm_frame_http" frameborder="0" allowtransparency="true" allowfullscreen="true" scrolling="no" id="fb_xdm_frame_http" aria-hidden="true" title="Facebook Cross Domain Communication Frame" tabindex="-1" src="./How to use captcha in Laravel 5_files/ao6eUeuGXQq.html" style="border: none;"></iframe><iframe name="fb_xdm_frame_https" frameborder="0" allowtransparency="true" allowfullscreen="true" scrolling="no" id="fb_xdm_frame_https" aria-hidden="true" title="Facebook Cross Domain Communication Frame" tabindex="-1" src="./How to use captcha in Laravel 5_files/ao6eUeuGXQq(1).html" style="border: none;"></iframe></div></div><div style="position: absolute; top: -10000px; height: 0px; width: 0px;"><div></div></div></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.4";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+<div class="fb-page fb_iframe_widget" data-href="https://www.facebook.com/pages/Tutsnare/757936347627025" data-width="300" data-height="500" data-small-header="true" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true" data-show-posts="false" fb-xfbml-state="parsed" fb-iframe-plugin-query="adapt_container_width=true&amp;app_id=&amp;container_width=312&amp;height=500&amp;hide_cover=false&amp;href=https%3A%2F%2Fwww.facebook.com%2Fpages%2FTutsnare%2F757936347627025&amp;locale=en_US&amp;sdk=joey&amp;show_facepile=true&amp;show_posts=false&amp;small_header=true&amp;width=300"><span style="vertical-align: top; width: 0px; height: 0px; overflow: hidden;"><iframe name="f1abd7d36e5fe38" width="300px" height="500px" frameborder="0" allowtransparency="true" allowfullscreen="true" scrolling="no" title="fb:page Facebook Social Plugin" src="./How to use captcha in Laravel 5_files/page.html" style="border: none; visibility: hidden; width: 0px; height: 0px;"></iframe></span></div></div>
+		</aside>
+
+    <aside id="feedburnerformwidget-2" class="widget widget_feedburnerformwidget">
+    <!-- Plugin Feedburner Form-->
+    <div class="fb-container">
+        <h3 class="widget-title">Subscribe to get each time we publish</h3>        <div class="fbf-text">
+                        </div>
+        <form class="fbf-widget" action="http://feedburner.google.com/fb/a/mailverify" method="post" target="popupwindow" onsubmit="window.open(&#39;http://feedburner.google.com/fb/a/mailverify?uri=tutsnare-feed&#39;, &#39;popupwindow&#39;, &#39;scrollbars=yes,width=550,height=520&#39;);return true">
+        <input class="subscription_email" type="text" name="email" placeholder="Your email"><input type="hidden" value="tutsnare-feed" name="uri">
+        <input type="hidden" name="loc" value="en_US">
+        <input class="subscription_btn" type="submit" value="Subscribe">
+        </form>
+
+    
+    
+    </div>
+    <!-- Plugin Feedburner Form-->
+		</aside>
+    <aside id="categories-3" class="widget widget_categories"><h3 class="widget-title">Categories</h3>		<ul>
+	<li class="cat-item cat-item-581"><a href="http://tutsnare.com/category/tutorials/angularjs/">AngularJS</a>
+</li>
+	<li class="cat-item cat-item-2"><a href="http://tutsnare.com/category/tutorials/codeigniter/">Codeigniter</a>
+</li>
+	<li class="cat-item cat-item-4"><a href="http://tutsnare.com/category/tutorials/laravel/">Laravel</a>
+</li>
+	<li class="cat-item cat-item-5"><a href="http://tutsnare.com/category/tutorials/php/">PHP</a>
+</li>
+	<li class="cat-item cat-item-6"><a href="http://tutsnare.com/category/tutorials/social/">Social</a>
+</li>
+	<li class="cat-item cat-item-3"><a href="http://tutsnare.com/category/tutorials/yii/">Yii</a>
+</li>
+		</ul>
+</aside>		</div><!-- #secondary -->
+		</div><!-- #main .wrapper -->
+	
+</div><!-- #page -->
+	
+	<footer id="colophon" role="contentinfo">
+
+<div class="site-info" style="text-align:center;">
+<div class="credits-center"><a href="http://tutsnare.com/about-us/">About Us</a> | <a href="http://tutsnare.com/contact-us/">Contact Us</a> | <a href="http://tutsnare.com/privacy-terms/">Privacy &amp; Terms</a> </div>
+
+		<div class="site-info" style="text-align:center;">
+		    <h2>Snare of development tutorials</h2>
+			<div class="credits-center">Copyright 2017@tutsnare.com</div>
+			
+		</div><!-- .site-info -->
+	</div></footer><!-- #colophon -->
+	
+			<a href="http://tutsnare.com/how-to-use-captcha-in-laravel-5/#inicio_pagina" title="Back to top"><div class="ir-arriba" style="display: block;"><i class="fa fa-chevron-up"></i></div></a>
+	<script type="text/javascript" src="./How to use captcha in Laravel 5_files/jquery.form.min.js.download"></script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var _wpcf7 = {"loaderUrl":"http:\/\/tutsnare.com\/wp-content\/plugins\/contact-form-7\/images\/ajax-loader.gif","sending":"Sending ..."};
+/* ]]> */
+</script>
+<script type="text/javascript" src="./How to use captcha in Laravel 5_files/scripts.js.download"></script>
+<script type="text/javascript" src="./How to use captcha in Laravel 5_files/prettify.js.download"></script>
+<script type="text/javascript" src="./How to use captcha in Laravel 5_files/load.js.download"></script>
+<script type="text/javascript" src="./How to use captcha in Laravel 5_files/sharifycounts.js.download"></script>
+<script type="text/javascript" src="./How to use captcha in Laravel 5_files/comment-reply.min.js.download"></script>
+<script type="text/javascript" src="./How to use captcha in Laravel 5_files/navigation.js.download"></script>
+<script type="text/javascript" src="./How to use captcha in Laravel 5_files/rsoul-toggle-search.js.download"></script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var embedVars = {"disqusConfig":{"platform":"wordpress@4.1.16","language":""},"disqusIdentifier":"614 http:\/\/tutsnare.com\/?p=614","disqusShortname":"tutsnare","disqusTitle":"How to use captcha in Laravel 5","disqusUrl":"http:\/\/tutsnare.com\/how-to-use-captcha-in-laravel-5\/","options":{"manualSync":false},"postId":"614"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="./How to use captcha in Laravel 5_files/disqus.js.download"></script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var countVars = {"disqusShortname":"tutsnare"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="./How to use captcha in Laravel 5_files/count.js(1).download"></script>
+	
+
+<iframe style="display: none;" src="./How to use captcha in Laravel 5_files/saved_resource(1).html"></iframe></body></html>

@@ -1,0 +1,564 @@
+/*
+|--------------------------------------------------------------------------
+| florenze HIS
+|--------------------------------------------------------------------------
+|
+| This is a proud development of ceynocta(pvt) Ltd.
+| 
+| Original sources of this product are property of ceynocta(pvt) Ltd
+| and please maintain this licence header when modify or further develop
+| this product.
+
+*/
+/* 
+    Created on : Oct 15, 2016, 7:48:57 PM
+    Author     : chamidhu
+*/
+
+#appointment-doctor{
+    width: 400px;
+}
+#appointment-basics{
+    border:1px solid #c0a16b;
+    //background: rgba(0, 0, 0, 0.2);
+    background: rgba(256, 256, 256, 0.75);
+    box-shadow: 0 16px 38px -12px rgba(0, 0, 0, 0.2), 0 16px 38px -12px rgba(0, 0, 0, 0.2), 0 16px 38px -12px rgba(0, 0, 0, 0.2) !important;
+    width: 100%;
+    height: 100%;
+    padding: 30px;
+}
+.appointment-close{
+    float: right;
+  font-weight: bold;
+  color: #000;
+  text-shadow: 0 1px 0 #fff;
+  filter: alpha(opacity=20);
+  opacity: 0;
+  z-index: 50000;
+  margin-right: -30px;
+  margin-top: -30px;
+  padding: 3px;
+}
+.appointment-close:hover,
+.appointment-close:focus{
+    cursor: pointer;
+  filter: alpha(opacity=50);
+  opacity: .5;
+}
+.select2-container .select2-selection--single {
+    height: 50px;
+    font-size: 18px;
+    //font-weight: bold;
+    padding-top: 7px;
+    color: black;
+}
+.select2-selection__arrow{
+    padding-top: 7px;
+    margin-right: 10px;
+}
+//.select2-container--default .select2-selection--single .select2-selection__rendered {
+//}
+.select2-container--open .select2-dropdown--below {
+    top: -42px;
+    //border-radius: 5px;
+}
+.select2-container--default .select2-results__option--highlighted[aria-selected]{
+    background-color: rgba(0, 0, 0, 0.11);
+    color: black;
+    //font-weight: bold;
+}
+
+
+
+
+
+.select2-container {
+    background: transparent;
+    border:1px solid black;
+    //border-radius: 5px;
+}
+
+.select2-container .select2-selection {
+    border: none;
+    height: 40px;
+    //background: #985f0d;
+    background: rgba(190, 120, 50, 0.5);
+    //opacity: 0.5;
+}
+
+.select2-container .select2-selection span:first-child {
+    color: #555;
+    padding-left: 10px;
+}
+input:focus{
+    outline: none;
+}
+
+.select2-results ul li {
+    color: black;
+    font-size: 14px;
+    min-height: 40px;
+}
+.select2-results ul li:first-child {
+    margin-top: 35px;
+}
+
+.select2-dropdown {
+    background-color: white;
+    margin-left: -1px;
+}
+.select2-search input:first-child {
+    background: rgba(190, 120, 50, 0.5);
+    min-height: 38px;
+    margin: -5px;
+    position: absolute;
+    color: white;
+}
+
+
+.appointment-date {
+    margin: 2px;
+    height: 100px;
+    
+    background: rgba(0, 0, 0, 0.3);
+}
+#doctor-result {
+    display: inline;
+}
+
+#doctor-slider-container {
+    height: 80px;
+}
+
+.appointment-date {
+    margin: 2px;
+    height: 100px;
+    
+    background: rgba(0, 0, 0, 0.3);
+}
+#doctor-slider{
+    max-height: 55px;
+    text-align: center;
+    font-weight: 600;
+}
+.lSSlideWrapper {
+    max-width: 400px;
+}
+#doctor-slider > li{
+    margin-left: 15px;
+    margin-right: 15px;
+    min-width: 175px;
+    cursor: pointer;
+}
+#doctor-slider > li:first-child{
+    margin-left: 1.5em;
+}
+#appointment-date, #appointment-time {
+    padding:10px;
+    color:#985f0d;
+    font-weight: 600;
+    font-size:0.85em;
+    background:#FFF;   
+    outline:none;
+    //border:1px solid #c8e3e0;
+    border:1px solid #c0a16b;
+    margin:0px auto;
+    width:49%;  
+    -webkit-apperance:none;
+    font-family: 'Raleway', sans-serif;
+     transition: border-color 0.2s;
+	-o-transition: border-color 0.2s;
+	-ms-transition: border-color 0.2s;
+	-moz-transition: border-color 0.2s;
+	-webkit-transition: border-color 0.2s;
+}
+#appointment-date{
+    float: left;
+}
+#appointment-time{
+    float: right;
+}
+#appointment-date-time-label{
+    color: #985f0d;
+    width: 49.5%;
+    padding-top: 50px;
+    padding-left: 1%;
+}
+#appointment-patient-details-label{
+    color: #985f0d;
+    width: 49.5%;
+    
+    margin-left: -10px;
+    padding-top: 35px;;
+    
+}
+
+
+#patient-selecter{
+    position: absolute;
+    //margin-top: 10px;
+    left: 20px;
+    max-width: 35px;
+    top: 20px;
+    background: rgba(98, 33, 014, 0.1);
+    //margin-left: -15px;
+}
+
+
+.op{
+    height: 35px;
+    width: 35px;
+    //background: rgba(0, 0, 0, 0.3);
+    //background: rgba(98, 33, 014, 0.1);
+    //border:1px solid #c0a16b;
+    //border-radius: 50px;
+    font-size: 25px;
+    padding-top: 4px;
+    text-align: center;
+    color: #985f0d;
+    cursor: pointer;
+}
+.op:first-child{
+    margin-bottom: 10PX;
+}
+.op:hover{
+    background: rgba(0, 0, 0, 0.2);
+}
+
+#appointment-patient-details{
+    position: absolute;
+    left: 20px;
+    padding-top: 10px;
+    //background: rgba(98, 33, 014, 0.15);
+    background: rgba(255, 255, 255, 0.6);
+    height: 120px;
+    width: 395px;
+}
+
+#selected-patient{
+    //margin-right: -15px;
+    height: 100px;
+    width: 270px;
+    //background: rgba(255, 255, 255, 0.3);
+    background: rgba(0, 0, 255, 0.08);
+    //background: rgba(98, 33, 014, 0.05);
+    //background: white;
+    border:1px solid #ddd;
+    border-radius: 5px;
+    font-size: 11px;
+    font-weight: bold;
+    text-align: center;
+    color: #c0a16b;
+    position: absolute;
+    right: 10px;
+    top: 10PX;
+    padding-top: 10px;
+    line-height: 6px;
+}
+#confirm-appointment{
+    position: absolute;
+    bottom: 25px;
+    right: 10px;
+    //padding:6px 0;
+	display:block;
+	height: 35px;
+        width:175px;
+	color:#FFF;
+	font-size:15px;
+	font-weight:600;
+	cursor:pointer;
+	border:none;
+	outline:none;
+    //background:#97e272;    
+    background-color: #39b3d7;
+	-webkit-transition: all 0.3s ease-in-out;
+	-moz-transition: all 0.3s ease-in-out;
+	-o-transition: all 0.3s ease-in-out;
+	transition: all 0.3s ease-in-out;
+	-webkit-apperance:none;
+	font-family: 'Raleway', sans-serif;
+        opacity: 0.8;
+}
+#confirm-appointment:hover{
+    opacity: 1;
+}
+#clear-selected-patient{
+    position: absolute;
+    right: 3px;
+    top: 3px;
+    font-size: 9px;
+    color: #ccc;
+    cursor: pointer;
+    //opacity: 0;
+}
+#appointment-illness-details{
+    position: absolute;
+    left: 20px;
+    margin-top: 140px;
+    width: 395px;
+    height: 30px;
+    padding: 0;
+}
+
+
+
+
+/*------------------------- Appontment History -------------------------*/
+
+#appointment-history{
+    position: absolute;
+    z-index: 5000;
+    top: 11%;
+    right: 25px;
+    left: 25px;
+    height: 77%;
+    //margin: -10px;
+    background: rgba(256, 256, 256, 0.9);
+}
+#appointment-history-filters{
+    width: 150px;
+    //padding: 10px;
+    position: absolute;
+    top: 10px;
+    bottom: 10px;
+    left: 10px;
+    background: rgba(98, 33, 014, 0.05);
+    text-align: center;
+    color: #000;
+    //border:1px solid #c0a16b;
+}
+#appointment-filter-list{
+    position: relative;
+    float: left;
+    width: 100%;
+}
+#appointment-filter-list table{
+    margin-top: 10px;
+}
+#appointment-filter-list td{
+    text-align: left;
+}
+#appointment-filter-list td input{
+    margin-left: 10px;
+    color: #985f0d;
+}
+#appointment-filter-list td label{
+    margin-left: 5px;
+    color: #985f0d;
+    //font-size: 12px;
+}
+#appointment-history-result-set{
+    //padding: 10px;
+    position: absolute;
+    top: 70px;
+    bottom: 10px;
+    left: 180px;
+    right: 10px;
+    z-index: 99999;
+    //background: rgba(256, 256, 256, 0.9);
+    text-align: left;
+    //color: #985f0d;
+    color: black;
+    //border:1px solid #c0a16b;
+}
+#appointment-history-result-set table{
+    background-color: white;
+}
+#appointment-history-result-set th:last-child, #appointment-history-result-set td:last-child{
+    text-align: center;
+}
+#appointment-history-result-set th{
+    background-color: #f4f4f4;
+}
+#appointment-history-result-set td button{
+    padding: 0 5px 0 5px;
+    margin: 0;
+    margin-left: 1px;
+    max-height: 20px;
+    max-width: 70px;
+    //font-size: 8px;
+    border-color: #c0a16b;
+    //font-size: 12px;
+}
+#appointment-history-result-set td button:focus,
+#appointment-history-result-set td button:hover{
+    background: white;
+    color: #39b3d7;
+}
+#appointment-history-result-set td button label{
+    font-weight: normal;
+    cursor: pointer;
+}
+
+#appointment-history-filter-keyword{
+    padding: 0;
+    position: absolute;
+    top: 10px;
+    left: 180px;
+    right: 530px;
+    
+}
+#appointment-search-field{
+    height: 34px;
+    
+}
+#appointment-history-pagination{
+    position: absolute;
+    right: 10px;
+    bottom: 0px;
+}
+
+#appointment-options-panel{
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    width: 510px;
+    height: 34px;
+    //background: green;
+}
+#appointment-options-panel button{
+    margin-left: 5px;
+}
+#appointment-sort-option{
+    width: 150px;
+    font-size: 12px;
+    height: 34px;
+    color: black;
+    border-radius: 0;
+    border:1px solid #c0a16b;
+    //font-weight: bold;
+    //position: absolute;
+    //right: 0;
+    //top: 4px;
+}
+#appointment-options-panel table{
+    text-align: right;
+    //background: red;
+    float: right;
+}
+#appointment-options-panel table td{
+    padding: 0;
+}
+
+
+#appointment-history-result-set .pagination > li > a{
+  color: #337ab7;
+  background: rgba(98, 33, 014, 0.05);
+  border:1px solid #c0a16b;
+}
+#appointment-history-result-set .pagination > li > a:hover,
+#appointment-history-result-set .pagination > li > a:focus {
+  background-color: #eee;
+  border-color: #c0a16b;
+  cursor: pointer;
+}
+#appointment-history-result-set .pagination > .active > a,
+#appointment-history-result-set .pagination > .active > a:hover,
+#appointment-history-result-set .pagination > .active > a:focus {
+  color: white;
+  background-color: #39b3d7;
+  border:1px solid #c0a16b;
+}
+#appointment-history-result-set .pagination > li:first-child > a{
+  border-radius: 0;
+}
+#appointment-history-result-set .pagination > li:last-child > a{
+  border-radius: 0;
+}
+
+#appointment-sort-option:focus,
+#appointment-sort-option:hover {
+  color: #333;
+  background: rgba(98, 33, 014, 0.05);
+  border-color: #c0a16b;
+}
+
+
+.appointment-filter-option {
+  background: white;
+  border:1px solid #c0a16b;
+  border-radius: 0;
+  font-weight: bold;
+  font-size: 13px;
+  height: 34px;
+  color: #999;
+}
+.appointment-filter-option:focus,
+.appointment-filter-option:hover {
+  color: #777;
+  background: rgba(98, 33, 014, 0.05);
+  border-color: #c0a16b;
+}
+.appointment-filter-option.active,
+.appointment-filter-option.active:hover,
+.appointment-filter-option.active:focus{
+  color: #39b3d7;
+  background: white;
+  font-weight: bold;
+}
+
+.btn:focus,
+.btn:active:focus,
+.btn.active:focus,
+.btn.focus,
+.btn:active.focus,
+.btn.active.focus {
+  outline: 0;
+}
+
+.modal-sm{
+    width: 500px;
+}
+.modal-content {
+    border-radius: 0px;
+}
+.modal{
+    top: 3%;
+}
+.modal-header{
+    padding-bottom: 0
+}
+.modal-backdrop.in {
+  filter: alpha(opacity=10);
+  opacity: .1;
+}
+.modal-content .close{
+    margin-right: 5px;
+    margin-top: 3px;
+}
+
+#appointment-patient-readonly-panel{
+    position: absolute;
+    top: 0px;
+    left: 33px;
+    right: 17px;
+    display: none;
+}
+.no-edit #appointment-patient-readonly-panel{
+    display: block;
+}
+#appointment-patient-readonly-panel td label{
+    padding-top: 5px;
+    padding-bottom: 5px;
+    //margin-bottom: 5px;
+}
+#appointment-edit-patient-gender-label{
+    display: none;
+    margin-left: 10px;
+}
+.no-edit #appointment-edit-dob-label{
+    opacity: 0;
+}
+.no-edit #appointment-edit-patient-gender-label{
+    display: block;
+}
+@media (min-height: 767px) {
+    #appointment-patient-readonly-panel td label{
+        padding-top: 7px;
+        padding-bottom: 7px;
+    }
+}
+
+
+
+

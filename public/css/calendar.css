@@ -1,0 +1,72 @@
+/*
+|--------------------------------------------------------------------------
+| florenze HIS
+|--------------------------------------------------------------------------
+|
+| This is a proud development of ceynocta(pvt) Ltd.
+| 
+| Original sources of this product are property of ceynocta(pvt) Ltd
+| and please maintain this licence header when modify or further develop
+| this product.
+
+*/
+/* 
+    Created on : Feb 17, 2017, 9:00:59 PM
+    Author     : chamidhu
+*/
+
+
+.calendar-container header {
+	//border-radius: 1em 1em 0 0;
+	background: rgba(190, 120, 50, 0.5);
+	color: #fff;
+	padding: 5px 5px;
+}
+
+.day {
+	font-size: 30px;
+	font-weight: 900;
+	line-height: 1em;
+}
+
+.month {
+	font-size: 24px;
+	line-height: 1em;
+	text-transform: lowercase;
+}
+
+#calender-body{
+    width: 250px;
+    color: #c0a16b;
+    font-size: 18px;
+    font-weight: bold;
+	background: #fff;
+	//border-radius: 0 0 1em 1em;
+	display: inline-block;
+	padding-top: 10px;
+}
+
+
+.ring-left,
+.ring-right {
+	position: absolute;
+	top: 40px;
+}
+
+.ring-left { left: 2em; }
+.ring-right { right: 2em; }
+
+.ring-left:before,
+.ring-left:after,
+.ring-right:before,
+.ring-right:after {
+	background: #fff;
+	border-radius: 4px;
+	-webkit-box-shadow: 0 3px 1px rgba(0, 0, 0, .3), 0 -1px 1px rgba(0, 0, 0, .2);
+	box-shadow: 0 3px 1px rgba(0, 0, 0, .3), 0 -1px 1px rgba(0, 0, 0, .2);
+	content: "";
+	display: inline-block;
+	margin: 8px;
+	height: 32px;
+	width: 8px;
+}

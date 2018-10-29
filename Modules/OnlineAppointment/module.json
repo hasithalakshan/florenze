@@ -1,0 +1,15 @@
+{
+    "name": "OnlineAppointment",
+    "alias": "onlineappointment",
+    "description": "",
+    "keywords": [],
+    "active": 1,
+    "order": 0,
+    "providers": [
+        "Modules\\OnlineAppointment\\Providers\\OnlineAppointmentServiceProvider"
+    ],
+    "aliases":{},
+    "files": [
+        "start.php"
+    ]
+}

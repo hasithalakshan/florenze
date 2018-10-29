@@ -1,0 +1,1060 @@
+/*
+|--------------------------------------------------------------------------
+| florenze HIS
+|--------------------------------------------------------------------------
+|
+| This is a proud development of team stesteplet@zZynite.inc (since 2016)
+| 
+| Original sources of this product are property of zZynite incoporation
+| and please maintain this licence header when modify or further develop
+| this product.
+
+*/
+/* 
+    Created on : Oct 15, 2016, 7:48:57 PM
+    Author     : chamidhu
+*/
+
+
+p {
+    font-family: 'Raleway', sans-serif;
+}
+
+#online-appointment-doctor{
+    float: left;
+    //width: 100%;
+    width: 400px;
+}
+#online-appointment-doctor-holder{
+    //float: left;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+    //position: absolute;
+    //top:20px;
+    width: 450px;
+    //left: 10px;
+}
+
+
+.select2-container .select2-selection--single {
+    height: 50px;
+    font-size: 18px;
+    font-weight: bold;
+    padding-top: 7px;
+    color: black;
+}
+.select2-selection__arrow{
+    padding-top: 7px;
+    margin-right: 10px;
+}
+//.select2-container--default .select2-selection--single .select2-selection__rendered {
+//}
+.select2-container--open .select2-dropdown--below {
+    top: -42px;
+    //border-radius: 5px;
+}
+.select2-container--default .select2-results__option--highlighted[aria-selected]{
+    background-color: rgba(0, 0, 0, 0.09);
+    color: black;
+    //font-weight: bold;
+}
+
+.select2-container {
+    background: transparent;
+    border: 1px solid #a4a4a4;
+    color: white;
+    //border-radius: 5px;
+}
+
+.select2-container .select2-selection {
+    border: none;
+    height: 40px;
+    background: rgba(0, 0, 0, 0.5);
+    transition:all ease 0.3s;
+    -webkit-transition:all ease 0.3s;
+    -o-transition:all ease 0.3s;
+    -moz-transition:all ease 0.3s;
+    font-size: 16px;
+}
+
+.select2-container .select2-selection:hover {
+    background-color: rgba(0,0,0, 0.8);
+    text-decoration: none;
+}
+
+.select2-container .select2-selection span:first-child {
+    color: white;
+    padding-left: 10px;
+}
+input:focus{
+    outline: none;
+}
+
+.select2-results ul li {
+    color: black;
+    font-family: 'Raleway', sans-serif;
+    font-size: 14px;
+    min-height: 40px;
+}
+
+.select2-dropdown {
+    background-color: white;
+    margin-left: -1px;
+}
+
+input:focus{
+    outline: none;
+}
+
+.select2-results ul li {
+    color: black;
+    font-size: 14px;
+    min-height: 40px;
+}
+.select2-results ul li:first-child{
+    margin-top: 35px;
+}
+.select2-dropdown {
+    background-color: white;
+    margin-left: -1px;
+}
+.select2-search input:first-child {
+    background: #444;
+    margin: -4px;
+    position: absolute;
+    min-height: 40px;
+    //opacity: 0.7;
+    color: white;
+}
+
+
+
+
+.top_right {
+    float: right;
+    display: inline-block;
+    text-align: right;
+}
+.top_right a {
+    margin-right: 10px;
+    display: inline-block;
+    font-size: 15px;
+    color: #a4a4a4;
+    text-decoration: none;
+    transition:all ease 0.3s;
+    -webkit-transition:all ease 0.3s;
+    -o-transition:all ease 0.3s;
+    -moz-transition:all ease 0.3s;    
+}
+.top_right a:hover {
+    background-color: #232323;
+    color: white;
+}
+
+
+#appointment-headline {
+    color: #999;
+    margin-top: 10px;
+    margin-bottom: 8px;
+    font-size:24px;
+}
+
+/*search*/
+#search-main-bar {
+    border-radius: 0;
+    border-bottom: 1px solid #aaa;
+    float:left;
+    width: 100%;
+    padding: 10px 0 20px 0;
+    margin: 0 10px 0 10px;
+    //background: rgba(220,240,255,0.8);
+    font-family: 'Raleway', sans-serif;
+}
+#search-doctor {
+    //position: absolute;
+    //left: 520px;
+    //top:0px;
+    display: block;
+    //margin: 0;
+    //margin-top: 30px;
+    
+    float: right;
+    border: 1px solid #a4a4a4;
+    color: white;
+    background-color: rgba(0,0,0, 0.45);
+    cursor: pointer;
+    transition:all ease 0.3s;
+    -webkit-transition:all ease 0.3s;
+    -o-transition:all ease 0.3s;
+    -moz-transition:all ease 0.3s;
+    padding: 12px;
+    
+}
+#search-doctor:hover {
+    background-color: rgba(0,0,0, 0.8);
+    text-decoration: none;
+}
+#search-doctor .glyphicon {
+    display: inline-block;
+    float: left;
+    font-weight: 700;
+    font-size: 16px;
+}
+#search-doctor p {
+    font-size: 17px;
+    font-weight: bold;
+    text-align: center;
+}
+
+
+#search-result{
+    float: left;
+    margin: 20px;
+}
+
+#doctor-profile{
+    position: absolute;
+    width: 160px;
+    text-align: center;
+    font-weight: bold;
+    //background: rgba(220,240,255,0.8);
+    //border:1px solid #c0a16b;
+    //background: rgba(0, 0, 0, 0.4);
+    //background: rgba(0, 0, 0, 0.1);
+    padding: 25px 0 25px 0;
+    color: #333;
+    border: 1px solid #a4a4a4;
+    
+}
+#doctor-profile-pic{
+    float: right;
+    height: 100px;
+    width: 100px;
+    margin: 0 25px 10px 0;
+    background: rgba(0, 0, 0, 0.3);
+    border:1px solid;
+    border-color: #3391E7;
+    font-size: 60px;
+    padding-top: 15px;
+    text-align: center;
+    color: #fff;
+    background-size: cover;
+}
+
+#doctor-available-times{
+    position: absolute;
+    left: 210px;
+    right: 30px;
+    height: 380px;
+    text-align: center;
+    font-weight: bold;
+    //background: rgba(220,240,255,0.8);
+    //border:1px solid #c0a16b;
+    //background: rgba(0, 0, 0, 0.4);
+    //background: rgba(0, 0, 0, 0.1);
+    //padding: 25px 0 25px 0;
+    color: #333;
+    //border: 1px solid #a4a4a4;
+    padding: 15px;
+    overflow-y: scroll;
+}
+#doctor-time-list{
+    width: 100%;
+    
+}
+#doctor-time-list td{
+    //padding: 7px 5px 7px 5px ;
+}
+#doctor-time-list th{
+    //padding: 10px 5px 10px 5px ;
+    text-align: center;
+    background: rgba(220,240,255,0.8);
+    
+}
+#doctor-time-list th p{
+    //color: #0000ff;
+    font-weight: bold;
+    font-size: 17px;
+}
+#doctor-time-list tr{
+    //margin: 10px;
+    //background: white;
+    //border-bottom: 1px solid #a4a4a4;
+    //border-top: 1px solid #a4a4a4;
+
+}
+
+
+#online-patient-register-form{
+    position: relative;
+    margin:auto;
+    //margin-top: 20px;
+    width: 100%;
+    max-width: 700px;
+    padding: 10px 0 20px 0;
+}
+#online-patient-register-form td{
+    padding:5px;
+    text-align: right;
+}
+#online-patient-register-form tr:last-child td{
+    text-align: left;
+}
+#online-appointment-patient-select-panel{
+    //float:left;
+    position: relative;
+    width: 100%;
+    padding: 10px 0 20px 0;
+    margin: 0 10px 0 10px;
+    height: 100px;
+    border-bottom: 1px solid #aaa;
+    font-family: 'Raleway', sans-serif;
+}
+#online-appointment-patient-select-panel table{
+    width: 100%;
+    max-width: 700px;
+    margin: auto;
+}
+#or-label{
+    margin: 20px;
+}
+
+#online-appointment-patient-select-panel input{
+    width: 100%;
+}/*
+#online-patient-register-form input[type="text"],#online-patient-register-form input[type="password"],#online-patient-register-form input[type="date"],#online-patient-register-form input[type="time"],#online-patient-register-form input[type="tel"],#online-patient-register-form input[type="email"],#online-patient-register-form select{
+    color:#777;
+    border-color: #888;
+    
+}
+#online-patient-register-form input:hover,#online-patient-register-form input:focus{
+	border-color:#333;
+}*/
+
+#online-register-patient{
+    //width: 100%;
+    //background: red;
+    margin-left: 20px;
+}
+#online-register-patient .jumbotron{
+    padding: 0px;
+    margin: 0;
+}
+
+#online-patient-register-form input[type="radio"] + label{
+    color:#777;
+}
+
+#online-patient-register-form input[type="button"],#online-patient-register-form input[type="submit"]{
+	color:#FFF;
+    background-color: rgba(0,0,0, 0.6);
+	-webkit-transition: all 0.3s ease-in-out;
+	-moz-transition: all 0.3s ease-in-out;
+	-o-transition: all 0.3s ease-in-out;
+	transition: all 0.3s ease-in-out;
+	-webkit-apperance:none;
+	font-family: 'Raleway', sans-serif;
+}
+#online-patient-register-form input[type="button"]:hover, #online-patient-register-form input[type="submit"]:hover{
+        background-color: rgba(0,0,0, 0.8);
+}
+
+#search-patient{
+    border: 1px solid #a4a4a4;
+    color: white;
+    background-color: rgba(0,0,0, 0.45);
+    cursor: pointer;
+    transition:all ease 0.3s;
+    -webkit-transition:all ease 0.3s;
+    -o-transition:all ease 0.3s;
+    -moz-transition:all ease 0.3s;
+    padding: 8px;
+}
+#search-patient:hover{
+    background-color: rgba(0,0,0, 0.8);
+}
+
+#online-selected-patient{
+    font-family: 'Raleway', sans-serif;
+    padding-top: 30px;
+}
+#online-selected-patient strong{
+    color: #777;
+    font-weight: bold;
+}
+#online-selected-patient .jumbotron{
+    margin: auto;
+    margin-left: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    //width: 100%;
+    //max-width: 700px;
+}
+#online-selected-patient table{
+    margin: auto;
+    width: 100%;
+    max-width: 700px;
+}
+#online-selected-patient table td{
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 0;
+    padding-top: 0;
+}
+#online-selected-patient table td:last-child{
+    
+    padding-right: 0;
+}
+#check-select-patient{
+    border: 1px solid #a4a4a4;
+    color: white;
+    background-color: rgba(0,0,0, 0.45);
+    cursor: pointer;
+    transition:all ease 0.3s;
+    -webkit-transition:all ease 0.3s;
+    -o-transition:all ease 0.3s;
+    -moz-transition:all ease 0.3s;
+    padding: 8px;
+}
+
+#check-select-patient:hover{
+    background-color: rgba(0,0,0, 0.8);
+}
+#online-selected-patient p:last-child{
+    margin-top: 10px;
+}
+
+#patient-details-jumbotron{
+    font-size: 12px;
+    padding: 5px;
+    margin: 5px;
+}
+#patient-details-jumbotron table{
+    margin: auto;
+    max-width: 300px;
+}
+#patient-details-jumbotron table td{
+    text-align: left;
+}
+#patient-details-jumbotron p{
+    font-size: 12px;
+}
+#set-select-patient{
+    float: right;
+    border: 1px solid #a4a4a4;
+    color: white;
+    background-color: rgba(0,0,0, 0.45);
+    cursor: pointer;
+    transition:all ease 0.3s;
+    -webkit-transition:all ease 0.3s;
+    -o-transition:all ease 0.3s;
+    -moz-transition:all ease 0.3s;
+    padding: 8px;
+}
+#set-select-patient:hover{
+    background-color: rgba(0,0,0, 0.8);
+}
+
+
+
+
+//
+#online-appointment-confirm-panel{
+    //float:left;
+    background: red;
+    position: relative;
+    width: 100%;
+    padding: 10px 0 20px 0;
+    margin: 0 10px 0 10px;
+    height: 600px;
+    border-bottom: 1px solid #aaa;
+    font-family: 'Raleway', sans-serif;
+}
+#online-appointment-confirm-panel table{
+    width: 100%;
+    max-width: 700px;
+    margin: auto;
+}
+#online-appointment-confirm-panel input{
+    border: 1px solid #a4a4a4;
+    color: white;
+    background-color: rgba(0,0,0, 0.45);
+    cursor: pointer;
+    transition:all ease 0.3s;
+    -webkit-transition:all ease 0.3s;
+    -o-transition:all ease 0.3s;
+    -moz-transition:all ease 0.3s;
+    padding: 8px;
+}
+#online-appointment-confirm-panel input:hover{
+    background-color: rgba(0,0,0, 0.8);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*template*/
+/* reset */
+
+
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,dl,dt,dd,ol,nav ul,nav li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video{margin:0;padding:0;border:0;font-size:100%;font:inherit;vertical-align:baseline;}
+article, aside, details, figcaption, figure,footer, header, hgroup, menu, nav, section {display: block;}
+
+ol,ul{list-style:none;margin:0px;padding:0px;}
+
+a{text-decoration:none;}
+.txt-rt{text-align:right;}/* text align right */
+.txt-lt{text-align:left;}/* text align left */
+.txt-center{text-align:center;}/* text align center */
+.float-rt{float:right;}/* float right */
+.float-lt{float:left;}/* float left */
+.clear{clear:both;}/* clear float */
+.pos-relative{position:relative;}/* Position Relative */
+.pos-absolute{position:absolute;}/* Position Absolute */
+.vertical-base{	vertical-align:baseline;}/* vertical align baseline */
+.vertical-top{	vertical-align:top;}/* vertical align top */
+.underline{	padding-bottom:5px;	border-bottom: 1px solid #eee; margin:0 0 20px 0;}/* Add 5px bottom padding and a underline */
+nav.vertical ul li{	display:block;}/* vertical menu */
+nav.horizontal ul li{	display: inline-block;}/* horizontal menu */
+img{max-width:100%;}
+
+
+
+
+
+.modal-sm{
+    width: 90%;
+    max-width: 900px;
+    
+}
+.modal-content {
+    border-radius: 0px;
+    min-height: 600px;
+    background: rgba(220,240,255,0.8);
+//background: rgba(190, 120, 50, 0.5);
+}
+.modal{
+    
+    top: 0px;
+    //overflow-y: auto;
+}
+.modal-header{
+    padding-bottom: 0
+}
+.modal-backdrop.in {
+  filter: alpha(opacity=10);
+  opacity: .1;
+}
+.modal-content .close{
+    margin-right: 5px;
+    margin-top: 3px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*end reset*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+body{
+    background: #ddd;
+    margin: 0;
+    padding: 0;
+}
+#body-wrapper{
+        max-width: 1300px;
+        margin-left: auto;
+        margin-right: auto;
+        border: 10px solid #fff;
+        border-top: 0;
+}
+.wrap{
+	width:100%;
+	margin:0 auto;
+        padding: 0;
+}
+.header{
+	//background:url(../images/header-bg.png);
+        z-index: 999;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+}
+.logo{
+	background: url(../images/logo.png);
+        height: 60px;
+        background-size: cover;
+        background-repeat: no-repeat;
+        float:left;
+	margin-top: 5px;
+        //opacity: 0.8;
+        width: 200px;
+        z-index: 9999;
+}
+.top-nav{
+	float:right;
+        margin-top: 10px;
+        margin-right: 10px;
+        border: 1px solid rgba(50, 153, 209,0.8);
+}
+.top-nav ul li{
+	display:inline-block;
+	float: left;
+	border-left: 1px solid rgb(31, 132, 224);
+}
+.top-nav ul li:first-child{
+	border-left:none;
+}
+.top-nav ul li a{
+	font-family: 'Raleway', sans-serif;
+	//background:#3391E7;
+        //background:rgba(50, 153, 209,0.8);
+	background-color: rgba(0,0,0, 0.5);
+        color: #fff;
+        font-weight: bolder;
+	text-transform: uppercase;
+	padding: 10px;
+	display: block;
+}
+.top-nav ul li a:hover{
+	
+}
+.top-nav li.active> a, .top-nav li> a:hover {
+	//background: rgb(50, 133, 209);
+	background-color: rgba(0,0,0, 0.8);
+        border-left-color:rgb(50, 133, 209);
+}
+/*-----content-grids-----*/
+.content-grids{
+	background:#3391E7;
+	padding: 10px 0px;
+}
+.options{
+    position: absolute;
+    left: 35px;
+    //right: 0;
+    bottom: 20px;
+    padding-top: 20px;
+    padding-left: 60px;
+    height: 100px;
+    //width: 250px;
+    z-index: 5;
+    background-color: rgba(255,255,255, 0.5);
+    //background-color: rgba(0,0,0, 0.2);
+}
+.listview{
+    float: left;
+    margin-bottom: 20px;
+}
+.listview h3{
+    padding-top: 10px;
+    height: 60px;
+    font-weight: bolder;
+    color: #555;
+    background: rgba(255,255,255, 0.6);
+    font-size: 18px;
+}
+.listimg1{
+    background: url(../images/grid-img1.png);
+    border: 5px solid rgba(255,255,255, 0.6);
+    width: 60px;
+    height: 60px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    opacity: 0.8;
+}
+.listimg3{
+    background: url(../images/grid-img3.png);
+    border: 5px solid rgba(255,255,255, 0.6);
+    width: 60px;
+    height: 60px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    opacity: 0.8;
+}
+.listimg2{
+    background: url(../images/grid-img2.png);
+    border: 5px solid rgba(255,255,255, 0.6);
+    width: 60px;
+    height: 60px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    opacity: 0.8;
+}
+
+
+
+
+
+
+
+
+.nav-tabs > li > a {
+    font-weight: bold;
+    font-family: 'Raleway', sans-serif;
+    font-size: 13px;
+    color: #777;
+    cursor: pointer;
+    
+    background: rgba(255,255,255,0.7);
+}
+.nav-tabs > li > a:hover {
+  border-color: rgba(255,255,255,0.8);
+  //background: rgba(100,100,100,0.6);
+  background: rgba(255,255,255,0.8);
+}
+.nav-tabs > li.active > a,
+.nav-tabs > li.active > a:focus,
+.nav-tabs > li.active > a:hover{
+  color: #000;
+  cursor: default;
+  //background: rgba(100,100,100,0.9);
+  background: rgba(255,255,255,1);
+  //border: 1px solid #ddd;
+  //border-bottom-color: transparent;
+  border: 0;
+  bottom: -1px;
+}
+
+.nav-tabs{
+    border: 0;
+}
+
+
+.tab-pane{
+  text-align: center;
+    border: 0;
+    //border: 1px solid #ddd;
+  border-top-color: transparent;
+  min-height: 500px;
+  //background: rgba(100,100,100,0.9);
+  background: rgba(255,255,255,1);
+  //background: rgba(200,200,200,0.9);
+  padding-right: 20px;
+}
+
+
+
+
+
+
+
+
+/***** Media Quries *****/
+@media only screen and (max-width: 1024px) {
+		
+}
+@media only screen and (max-width: 768px) {
+        .modal-sm{
+            width: 100%;
+        }
+}
+/*  GO FULL WIDTH AT LESS THAN 640 PIXELS */
+@media only screen and (max-width: 640px) {
+	
+}
+
+/*  GO FULL WIDTH AT LESS THAN 480 PIXELS */
+@media only screen and (max-width: 480px) {
+	
+}
+/*  GRID OF THREE   ============================================================================= */
+.section {
+	clear: both;
+	padding: 0px;
+	margin: 0px;
+        background-color: white;
+}
+.group:before,
+.group:after {
+    content:"";
+    display:table;
+}
+.group:after {
+    clear:both;
+}
+.group {
+    zoom:1;
+}
+.feature{
+	display: block;
+	float:left;
+	//margin: 1% 0 1% 1.6%;
+	padding: 10px;;
+        background: #fff;
+	border: 1px solid #edf3f3;
+}
+.feature  h3{
+	color:white;;
+	margin-bottom: 20px;;
+	margin-top: 15px;
+        padding: 5px;
+        border-radius: 10px;
+	font-size: 24px;;
+	font-family: 'Raleway', sans-serif;
+	font-weight: bold;
+	letter-spacing: 1px;
+        text-align: center;
+        background: rgb(139, 139, 139);
+}
+.feature  p  {
+	font-family: 'Raleway', sans-serif;
+	font-size: 0.8em;
+	color: rgb(155, 155, 155);
+	line-height: 1.8em;
+        padding: 20px;
+}
+.feature  span{
+    padding: 20px;
+}
+
+.feature a{
+	font-size: 0.8em;
+	font-family: 'Raleway', sans-serif;
+	background: #3285d1; /* Old browsers */
+	background: -moz-linear-gradient(top,  #3285d1 0%, #3285d1 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#3285d1), color-stop(100%,#3285d1)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  #3285d1 0%,#3285d1 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  #3285d1 0%,#3285d1 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  #3285d1 0%,#3285d1 100%); /* IE10+ */
+	background: linear-gradient(to bottom,  #3285d1 0%,#3285d1 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3285d1', endColorstr='#3285d1',GradientType=0 ); /* IE6-9 */
+	border: #fff 1px solid;
+	-webkit-border-radius: 6px;
+	-moz-border-radius: 6px;
+	border-radius: 6px;
+	-webkit-box-shadow: 0px 0px 3px rgb(207, 206, 206);
+	-moz-box-shadow: 0px 0px 3px rgb(207, 206, 206);
+	box-shadow: 0px 0px 3px rgb(207, 206, 206);
+	text-transform: uppercase;
+	color: #fff;
+	padding: 13px 17px 13px 17px;
+	transition: 0.5s ease;
+	-o-transition: 0.5s ease;
+	-webkit-transition: 0.5s ease;
+	float: left;
+	margin-top: 10px;
+}
+.feature a:hover{
+	color:#000;
+}
+/*----footer-----*/
+.footer{
+	background:#e0e7eb;
+	padding: 15px 4px;
+}
+.footer-left{
+	float:left;
+}
+.footer-left ul li{
+	display:inline-block;
+}
+.footer-left ul li a{
+	font-family: 'Raleway', sans-serif;
+	color:rgb(139, 139, 139);
+	text-transform: uppercase;
+	display: block;
+	margin-right:10px;
+}
+.footer-right{
+	float:right;
+}
+.footer-right p{
+	font-family: 'Raleway', sans-serif;
+	color:rgb(139, 139, 139);
+	text-transform: uppercase;
+}
+.footer-right a{
+	text-transform: uppercase;
+	color:rgb(139, 139, 139);
+	font-family: 'Raleway', sans-serif;
+}
+.footer-right a:hover,.footer-left ul li a:hover{
+	color:#3391E7;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.image-slider{
+    position: relative;
+}
+
+#slider-wrapper {
+    //height: 650px;
+	background: transparent;
+	position: relative;
+        width: 100%;
+    //overflow-y: hidden;
+}
+#slider {
+    height: 400px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+}
+#slider img {
+    display: none;
+    left: 0;
+    position: absolute;
+    top: 0;
+}
+#slider a {
+    border: 0 none;
+    display: block;
+}
+.nivoSlider {
+    position: relative;
+}
+.nivoSlider img {
+    left: 0;
+    position: absolute;
+    top: 0;
+}
+.nivoSlider a.nivo-imageLink {
+    border: 0 none;
+    display: none;
+    height: 100%;
+    left: 0;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 6;
+}
+.nivo-slice {
+    display: block;
+    height: 100%;
+    position: absolute;
+    z-index: 5;
+}
+.nivo-box {
+    display: block;
+    position: absolute;
+    z-index: 5;
+}
+.nivo-caption {
+    background: none repeat scroll 0 0 #000000;
+    bottom: 0;
+    color: #FFFFFF;
+    font-family: 'Raleway', sans-serif;
+    left: 0;
+    position: absolute;
+    text-transform: uppercase;
+    width: 100%;
+    z-index: 8;
+}
+.nivo-caption p {
+    margin: 0;
+    padding: 5px;
+}
+.nivo-caption a {
+    color: red;
+    display: inline !important;
+    text-decoration: none;
+}
+.nivo-caption a:hover {
+    color: blue;
+    text-decoration: underline;
+}
+.nivo-html-caption {
+    display: none;
+}
+.nivo-directionNav a {
+    background: url("../images/arrows.png") no-repeat scroll 0 0 transparent;
+    cursor: pointer;
+    display: block;
+    height: 30px;
+    position: absolute;
+    text-indent: -9999px;
+    top: 45%;
+    width: 30px;
+    z-index: 9;
+}
+a.nivo-prevNav {
+    left: 15px;
+}
+a.nivo-nextNav {
+    background-position: -30px 50%;
+    right: 15px;
+}
+.nivo-controlNav {
+    bottom: -30px;
+    left: 50%;
+    margin-left: -40px;
+    position: absolute;
+}
+.nivo-controlNav a {
+    cursor: pointer;
+    float: left;
+    height: 22px;
+    margin-top: 250px;
+    position: relative;
+    text-indent: -9999px;
+    width: 22px;
+    z-index: 9;
+}
+.nivo-controlNav a.active {
+    background-position: 0 -22px;
+}
+

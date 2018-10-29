@@ -1,0 +1,42 @@
+
+    body
+    {
+        font-family: arial;
+margin:0;
+	padding:0;
+	background-image:url("lvkid.jpg");
+        background-size:100% 100%;
+		font-size: 12pt;
+
+    }
+
+    th,td
+    {
+        margin: 0;
+        text-align: center;
+        border-collapse: collapse;
+        outline: 2px solid #e3e3e3;
+    }
+
+    td
+    {
+        width:20% ;
+		font-size: 12pt;
+    }
+
+    th
+    {
+		text-align: center;
+		font-size: 12pt;
+        background: #00264d;
+        color: white;
+        padding: 5px 5px;
+		width:5%
+    }
+
+    td:hover
+    {
+        cursor: pointer;
+        background: #666;
+        color: white;
+    }

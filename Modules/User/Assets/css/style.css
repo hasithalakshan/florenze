@@ -1,0 +1,171 @@
+#search{
+    position: absolute;
+    width: 500px;
+    right: 15px;
+}
+.x_title{
+    padding-bottom: 15px;
+}
+.x_content{
+    min-height: 420px;
+}
+.nav_menu{
+    
+    height: 30px;
+}
+#admin-logo {
+    background: url(/florenze/public/images/florenze-logo.png);
+    height: 30px;
+    width: 100px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    //position: absolute;
+    z-index: 10000;
+    margin-top: 5px;
+    margin-right: 20px;
+    float: right;
+    opacity: 0.5;
+}
+
+#user-list-pagination{
+    position: absolute;
+    right: 0;
+}
+.modal-header{
+ background-color:#009ACD;
+ height:20px;
+  text-align: center; 
+  font: sans-serif;
+  color:#363636 ; 
+ 
+}
+#patient-add-modal-form, #patient-add-modal-form table{
+    width: 100%;
+    max-width: 500px;
+    margin: auto;
+}
+#patient-add-modal-form table td{
+    text-align: center;
+}
+
+
+
+
+
+
+
+
+#nav-panel{
+    width: 400px;
+    position: absolute;
+    right: 15px;
+    top: 15px;
+}
+#nav-panel button{
+}
+#left-panel{
+    position: absolute;
+    left: 15px;
+    width: 130px;
+    top: 80px;
+    height: 80%;
+    padding: 10px;
+    //background: white;
+    background: rgba(0,0,0,0.3);
+}
+#left-panel button{
+    height: 24%;
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 0;
+    margin-bottom: 5%;
+    width: 100%;
+}
+#left-panel button:first-child{
+    font-size: 40px;
+}
+#right-panel{
+    //background: rgba(0,0,0,0.6);
+    position: absolute;
+    left: 160px;
+    right: 15px;
+    top: 80px;
+    height: 80%;
+}
+#panel-heading{
+    background: white;
+}
+#user-panel-body{
+    position: absolute;
+    left: 0;
+    right: 25px;
+}
+#search-bar{
+    margin-left: 15px;
+    //margin-right: 15px;
+}
+#user-list{
+    background:white;
+    margin: 15px;
+    left: 30px;
+    height: 75%;
+    
+}
+
+
+
+
+
+
+
+
+
+.jumbotron {
+    position: relative;
+  background-color: rgba(210, 210, 240,0);
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    overflow: hidden;
+}
+.btn-xlarge {
+    padding: 50px 50px;
+     color: black;
+    font-size: 50px; //change this to your desired size
+    line-height: normal;
+    -webkit-border-radius: 8px;
+       -moz-border-radius: 8px;
+            border-radius: 8px;
+}
+
+td{
+    font-size: 11px;
+}
+td input{
+    height: 10px;
+     margin-left: 10px;
+    color: #985f0d;
+    height: 15px;
+    width: 65px;
+}
+.btn-lg 
+{
+    width: 120px;
+    margin-left: 10px;
+    height: 125px;
+    font-size: 10px;
+}
+
+
+.form-group{
+    color:#104E8B;
+}
+.gh{
+    color:#00F5FF;
+}
+
+.modal-body{
+background-color: rgba(210, 210, 240, 0);
+}
+
+
